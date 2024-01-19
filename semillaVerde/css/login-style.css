@@ -1,0 +1,79 @@
+/*Tipografía del proyecto*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400&display=swap');
+
+
+:root {
+    /*Var de la paleta de colores que se usaría*/
+    --clr-principal: #29fe1d;
+    --clr-secundario: #07e500;
+    --clr-ternario: #fff;
+    --clr-cuartario: #000; 
+    /*Var de la tipografía*/
+    --type-principal: 'Montserrat', sans-serif; 
+}
+
+/*Estilos generales*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+/*Diseño formulario*/
+.card {
+    width: 500px;
+}
+.card-body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+}
+.card-body h1 {
+    margin: 20px;
+    font-family: var(--type-principal);
+}
+.card-img{
+    height: 550px;
+    background-image: url('/img/login.jpg');
+    background-size: cover;
+}
+
+@media screen and (max-width: 768px){
+    .card-box{
+        display: none;
+    }
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    width: 300px;
+    margin: 10px;
+}
+input:focus {
+    outline: none;
+}
+input::placeholder {
+    text-align: left;
+}
+
+/*Estilo del button*/
+.btn{
+    background-color: var(--clr-principal);
+    color: black;
+    border: none;
+    text-transform: uppercase;
+    width: 250px;
+    border-radius: 25px;
+}
+.btn:hover{
+    background-image: url('/img/plantas.jpg');
+    background-size: cover;
+    box-shadow: inset;
+    color: white;
+    transition: .5s ease-in-out;
+}
