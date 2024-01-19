@@ -22,15 +22,20 @@
                 <div class="banner-right">
                     <img src="./img/location.png" alt="imagen de locación">
                     <p>UBICACIÓN: Outlet de la moda Guayabal RIWI</p>
-                    <div class="banner-left">
-                        <p><a href="./login.html">Iniciar Sesión</a> <span> / </span><a href="./registro.html">Registro</a></p>
-                    </div>
+                </div>
+                <div class="banner-left">
+                    <select name="select" id="select">
+                        <option value="inglés">Eng</option>
+                        <option value="español">Esp</option>
+                    </select>
+                    <span>COP</span>
+                    <p class="parrafo"><a href="./login.html">Iniciar Sesión</a> <a href="./registro.html">Registro</a></p>
                 </div>
             </div>
             <hr >
             <div class="bannerPrincipal">
                 <div class="contenedorDerecho">
-                    <img src="" alt="logo de la página web">
+                    <img class="logo" src="./img/LOGO MERCADO VERDE.svg" alt="logo de la página web">
                     <h1>Mercado <span>Verde</span></h1>
                 </div>
                 <div class="contenedorMedio">
@@ -53,35 +58,82 @@
                     <li>Sobre Nosotros</li>
                     <li>Contácenos</li>
                 </ul>
+                <div class="left">
+                    <img src="/img/telefono.png" alt="icono para la sección de número telefónico">
+                    <p>(+57) 000-000-000</p>
+                </div>
             </div>
             
             
         </nav>
+        <!--Inicia sesión de las cartas-->
         <div class="container d-flex flex-row ">
-            <div class="col-md-8">
+            <div class="banner1 col-md-8">
                 <div class="card cartas-principales">
                     <div class="carta-uno card-body">
-                        <h1>Frutas y Vegetales Frescos</h1>
-                        <p>CON TU COMPRA AYUDAS A QUE EL CAMPESINO SEA BIEN RECOMENDADO POR SUS PRODUCTOS</p>
+                        <div class="informacion">
+                            <h2>Frutas y Vegetales Frescos</h2>
+                            <p>CON TU COMPRA AYUDAS A QUE EL CAMPESINO SEA BIEN RECOMENDADO POR SUS PRODUCTOS</p>
+                            <button class="comprar">Comprar Ahora <img src="./img/flecha.png" alt="flecha"></button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-info">
-                <div class="carta-column col-md-4">
+                <div class="col-md-4">
                     <div class="card cartas-principales">
-                        <div class="card-body">
-                            <h2>Mercado Verde</h2>
+                        <div class="card-body carta-dos">
+                            <div class="carta-dos-box">
+                                <p>Compra</p>
+                                <h2>DIRECTO DEL CAMPO</h2>
+                                <span>Frutas y Vegetales</span>
+                                <a href="#">Comprar Ahora <img src="./img/flecha.png" alt="flecha"></a>
+                            </div>
                         </div>
                     </div>
                 </div> 
                 <div class="carta-column1 col-md-4">
                     <div class="card cartas-principales">
-                        <div class="card-body">
-                            <h1>Segunda Carta</h1>
+                        <div class="card-body carta-tres">
+                            <div class="carta-tres-box">
+                                <p>OBTEN UN MEJOR TRATO</p>
+                                <h2>Ofertando por una Post-Venta de Cultivos</h2>
+                                <a href="#">Comprar Ahora <img src="./img/flecha.png" alt="flecha"></a>
+                            </div>
                         </div>
                     </div>
                 </div> 
             </div>
+        </div>
+        <!--Sección información del usuario-->
+        <div class="informacion-usuario">
+            <div class="info-usuario-uno">
+                <img src="./img/Icono Envios.svg" alt="">
+                <h3>Envío Seguro</h3>
+                <p>En todo tu pedido</p>
+            </div>
+            <div class="info-usuario-dos">
+                <img src="./img/Icono Soporte.svg" alt="">
+                <h3>Soporte 24/7</h3>
+                <p>Acceso instantáneo a soporte</p>
+            </div>
+            <div class="info-usuario-tres">
+                <img src="./img/Icono Seguro.svg" alt="">
+                <h3>Pago 100% Seguro</h3>
+                <p>Tú dinero siempre estará seguro</p>
+            </div>
+            <div class="info-usuario-cuatro">
+                <img src="./img/Icono Garantia.svg" alt="">
+                <h3>Garantía con los productos</h3>
+                <p>Devolución Garantizada</p>
+            </div>
+        </div>
+
+        <!--Sección de productos-->
+        <div class="container" id="container">
+            <br>
+            <h2>Productos Populares</h2>
+
         </div>
     </div>
 
