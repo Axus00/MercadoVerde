@@ -57,7 +57,7 @@ for (let i = 0; i < 4; i++) {
     col.classList.add("col-md-3")
 
     const card = document.createElement("div")
-    card.classList.add("card")
+    card.classList.add("card", "mt-4")
 
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body", "h-100")
@@ -82,7 +82,6 @@ for (let i = 0; i < 4; i++) {
     contador++;
 
     if(contador == (objeto.length)){
-        console.log("otro")
         container.appendChild(row)
         break a;
     }
@@ -90,6 +89,10 @@ for (let i = 0; i < 4; i++) {
 container.appendChild(row)
 }
 
+function filtrar(filtro){
+    localStorage.setItem("filtrado", filtro)
+
+}
 
 /* for(let i = 0; i < 10; i++){
         let e = objeto[i % objeto.length];
