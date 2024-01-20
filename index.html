@@ -24,9 +24,10 @@
                     <p>UBICACIÓN: Outlet de la moda Guayabal RIWI</p>
                 </div>
                 <div class="banner-left">
-                    <select name="select" id="select">
-                        <option value="inglés">Eng</option>
-                        <option value="español">Esp</option>
+                    <select name="select" id="select" onchange="traducir(this.value)">
+                        <option value="">Idioma</option>
+                        <option value="en">Inglés</option>
+                        <option value="es">Español</option>
                     </select>
                     <span>COP</span>
                     <p class="parrafo"><a href="./login.html">Iniciar Sesión</a> <a href="./registro.html">Registro</a></p>
@@ -39,7 +40,7 @@
                     <h1>Mercado <span>Verde</span></h1>
                 </div>
                 <div class="contenedorMedio">
-                    <input type="text" placeholder="Buscar Productos">
+                    <input type="text" placeholder="Search Products">
                     <button class="botonBuscar">Buscar</button>
                 </div>
                 <div class="contenedorIzquierdo">
@@ -107,25 +108,23 @@
         </div>
         <!--Sección información del usuario-->
         <div class="informacion-usuario">
-            <div class="info-usuario-uno">
-                <img src="./img/Icono Envios.svg" alt="">
-                <h3>Envío Seguro</h3>
-                <p>En todo tu pedido</p>
-            </div>
-            <div class="info-usuario-dos">
-                <img src="./img/Icono Soporte.svg" alt="">
-                <h3>Soporte 24/7</h3>
-                <p>Acceso instantáneo a soporte</p>
-            </div>
-            <div class="info-usuario-tres">
-                <img src="./img/Icono Seguro.svg" alt="">
-                <h3>Pago 100% Seguro</h3>
-                <p>Tú dinero siempre estará seguro</p>
-            </div>
-            <div class="info-usuario-cuatro">
-                <img src="./img/Icono Garantia.svg" alt="">
-                <h3>Garantía con los productos</h3>
-                <p>Devolución Garantizada</p>
+            <div class="informacion-usuario-box">
+                <div class="info-usuario-uno">
+                    <h3>Envío Seguro</h3>
+                    <p>En todo tu pedido</p>
+                </div>
+                <div class="info-usuario-dos">
+                    <h3>Soporte 24/7</h3>
+                    <p>Acceso instantáneo a soporte</p>
+                </div>
+                <div class="info-usuario-tres">
+                    <h3>Pago 100% Seguro</h3>
+                    <p>Tú dinero siempre estará seguro</p>
+                </div>
+                <div class="info-usuario-cuatro">
+                    <h3>Garantía con los productos</h3>
+                    <p>Devolución Garantizada</p>
+                </div>
             </div>
         </div>
 
@@ -144,5 +143,9 @@
 
     <!--Script Principal-->
     <script src="./js/script.js"></script>
+
+     <!--Script traduccion-->
+     <script src="./js/traduccion.js"></script>
+
 </body>
 </html>

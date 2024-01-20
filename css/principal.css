@@ -388,17 +388,20 @@ input::placeholder {
 
 /*Estilos sobre banner para información de valor para el usuario*/
 .informacion-usuario{
-    background-color: var(--clr-ternario);
-    box-shadow: 4px 4px rgba(0, 0, 0, .5);
-    border: 1px solid black;
-    border-radius: 10px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 200px;
+}
+.informacion-usuario-box{
+    background-color: var(--clr-ternario);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 .info-usuario-uno{
     display: flex;

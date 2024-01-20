@@ -60,7 +60,7 @@ for (let i = 0; i < 4; i++) {
     card.classList.add("card", "mt-4")
 
     const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body", "h-100")
+    cardBody.classList.add("card-body")
     
     let img = document.createElement('img');
         img.src = objeto[contador].src;
