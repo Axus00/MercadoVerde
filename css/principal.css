@@ -165,7 +165,23 @@ hr {
 .contenedorDown li:focus{
     color: var(--clr-ternario);
 }
-
+.categoria button{
+    color: #ccc;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+}
+.categoria button:hover{
+    color: var(--clr-ternario);
+}
+select {
+    color: #ccc;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+}
 .left{
     display: flex;
 }
@@ -199,6 +215,7 @@ hr {
 }
 input {
     border: none;
+    background-color: transparent;
     border-radius: 5px;
     border-bottom: 1px solid #ccc;
 }
