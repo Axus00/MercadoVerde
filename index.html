@@ -7,7 +7,9 @@
     <meta name="description" content="Semilla Verde es una plataforma que conecta directamente a agricultores y compradores, eliminando intermediarios y mejorando la eficiencia en la cadena de suministro agrícola.">
     <meta name="keywords" content="agricultura, cadena de suministro, intermediarios, plataforma agrícola, agricultores, compradores">
     <meta name="author" content="Semilla Verde">
-    <title>SemillaVerde</title>
+    <title>MercadoVerde</title>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -16,11 +18,11 @@
 </head>
 <body>
 
-    <div class="container-fluid">
-        <nav class=" navbar-light bg-light fixed-top d-flex flex-column">
+    <div class="container-fluid d-flex flex-column min-vh-100">
+        <nav class=" navbar-light bg-light fixed-top d-flex flex-column">   
             <div class="banner">
                 <div class="banner-right">
-                    <img src="./img/location.png" alt="imagen de locación">
+                    <img class="img-fluid" src="./img/location.png" alt="imagen de locación">
                     <p>UBICACIÓN: Outlet de la moda Guayabal RIWI</p>
                 </div>
                 <div class="banner-left">
@@ -29,7 +31,6 @@
                         <option value="en">Inglés</option>
                         <option value="es">Español</option>
                     </select>
-                    <span>COP</span>
                     <p class="parrafo"><a href="./login.html">Iniciar Sesión</a> <a href="./registro.html">Registro</a></p>
                 </div>
             </div>
@@ -37,14 +38,14 @@
             <div class="bannerPrincipal">
                 <div class="contenedorDerecho">
                     <img class="logo" src="./img/LOGO MERCADO VERDE.svg" alt="logo de la página web">
-                    <h1>Mercado <span>Verde</span></h1>
+                    <h1 id="titulo">Mercado<span>Verde</span></h1>
                 </div>
                 <div class="contenedorMedio">
                     <input type="text" placeholder="Search Products">
                     <button class="botonBuscar">Buscar</button>
                 </div>
                 <div class="contenedorIzquierdo">
-                    <img src="./img/bolsa-compras.png" alt="bolsa de compras para el carrito">
+                    <img src="./img/bolsa-compras.png" alt="bolsa de compras para el carrito" id="carrito">
                     <div class="carritoCompras">
                         <p>Mis Compras:</p>
                         <span><strong>$57.000</strong></span>
@@ -87,7 +88,7 @@
                         <div class="informacion">
                             <h2>Frutas y Vegetales Frescos</h2>
                             <p>CON TU COMPRA AYUDAS A QUE EL CAMPESINO SEA BIEN RECOMENDADO POR SUS PRODUCTOS</p>
-                            <button class="comprar">Comprar Ahora <img src="./img/flecha.png" alt="flecha"></button>
+                            <button class="comprar">Comprar Ahora</button>
                         </div>
                     </div>
                 </div>
@@ -122,18 +123,30 @@
         <div class="informacion-usuario">
             <div class="informacion-usuario-box">
                 <div class="info-usuario-uno">
+                    <div class="icono-info">
+
+                    </div>
                     <h3>Envío Seguro</h3>
                     <p>En todo tu pedido</p>
                 </div>
                 <div class="info-usuario-dos">
+                    <div class="icono-info">
+                        
+                    </div>
                     <h3>Soporte 24/7</h3>
                     <p>Acceso instantáneo a soporte</p>
                 </div>
                 <div class="info-usuario-tres">
+                    <div class="icono-info">
+                        
+                    </div>
                     <h3>Pago 100% Seguro</h3>
                     <p>Tú dinero siempre estará seguro</p>
                 </div>
                 <div class="info-usuario-cuatro">
+                    <div class="icono-info">
+                        
+                    </div>
                     <h3>Garantía con los productos</h3>
                     <p>Devolución Garantizada</p>
                 </div>
@@ -141,15 +154,79 @@
         </div>
 
         <!--Sección de productos-->
-
-        <div class="container" id="container">
+        <div class="contenedor d-flex flex-column" id="container">
             <br>
-            <h2>Productos Populares</h2>
-
+            <div class="container-productos">
+                <h2>Productos Populares</h2>
+                <p>Ver Todos <img src="./img/flecha.png" alt="flecha botón"></p>
+            </div>
         </div>
+        <div class="container  d-flex flex-row sesion-suscripcion">
+            <div class="boletin-derecho">
+                <h2>Suscríbete</h2>
+                <p>para obtener ofertas y noticias sobre los cultivos disponibles en la plataforma antes de ser publicadas.</p>
+            </div>
+            <div class="form-suscripcion">
+                <input type="text" placeholder="your e-mail">
+                <button type="submit">Suscríbete</button>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        
     </div>
-
-
+    
+    <footer>
+        <div class="footer-columnas">
+            <div class="footer-derecho">
+                <img src="./img/LOGO MERCADO VERDE.svg" alt="logo mercado verde" width="70px" height="70px">
+                <h2>Mercado<span>Verde</span></h2>
+            </div>
+            <div class="columna-uno">
+                <h3>Mí Cuenta</h3>
+                <ul>
+                    <li>Mí Cuenta</li>
+                    <li>Historial de Órdenes</li>
+                    <li>Carrito de Compras</li>
+                    <li>Lista de Deseos</li>
+                </ul>
+            </div>
+            <div class="columna-dos">
+                <h3>Ayudas</h3>
+                <ul>
+                    <li>Contacto</li>
+                    <li>Preguntas Frecuentes</li>
+                    <li>Términos y Condiciones</li>
+                    <li>Políticas de Provacidad</li>
+                </ul>
+            </div>
+            <div class="columna-tres">
+                <h3>Accesibilidad</h3>
+                <ul>
+                    <li>Acerca de</li>
+                    <li>Tienda</li>
+                    <li>Productos</li>
+                    <li>Vigilar Órden</li>
+                </ul>
+            </div>
+            <div class="columna-cuatro">
+                <h3>Categorías</h3>
+                <ul>
+                    <li>Frutas</li>
+                    <li>Vegetales</li>
+                    <li>Publicar</li>
+                    <li>Comprar</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p>MercadoVerde &copy; 2024. Todos los derechos reservados</p>
+    </footer>
 
     <!--Script Principal-->
     <script src="./js/script.js"></script>

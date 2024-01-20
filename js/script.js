@@ -1,3 +1,14 @@
+//función para cuando le den click al logo de la web
+let titulo = document.getElementById("titulo");
+
+titulo.addEventListener('click', () => {
+    console.log('Hay un click');
+
+    location.href = "index.html";
+    
+}) //Fin de funcionalidad para volver a la web
+
+
 //Se capturan los valores de los inputs
 let email = document.getElementById("email");
 let password = document.getElementById("password");
@@ -43,7 +54,7 @@ let objeto = [
     {name:'Mazorca x 500gr', tipo: 'vegetal', src: './img/Mazorca.png', precio: '$4.145',},
     {name:'Coliflor Fresca', tipo: 'fruta', src: './img/Coliflor.png', precio: '$5.640',},
     {name:'Pimentón Verde', tipo: 'fruta', src: './img/Pimenton Verde.png', precio: '$3.645',},
-    {name:'Ají Jalapeño Verde x 500gr', tipo: 'fruta', src: './img/Chile Rojo.png', precio: '$6.820',}
+    {name:'Ají Jalapeño Verde x 500gr', tipo: 'fruta', src: './img/ají verde.png', precio: '$6.820',}
 ]
 const container= document.getElementById("container");
 let contador = 0;
@@ -57,7 +68,7 @@ for (let i = 0; i < 4; i++) {
     col.classList.add("col-md-3")
 
     const card = document.createElement("div")
-    card.classList.add("card", "mt-4")
+    card.classList.add("card", "d-flex", "flex-fill", "mt-4")
 
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body")
