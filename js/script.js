@@ -102,7 +102,7 @@ container.appendChild(row)
 
 function filtrar(filtro){
     localStorage.setItem("filtrado", filtro)
-    window.location.href = "MercadoVerde/productos/productos.html"
+    window.location.href = "productos/productos.html"
 }
 
 /* for(let i = 0; i < 10; i++){
