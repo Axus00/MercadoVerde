@@ -55,18 +55,11 @@
             <div class="contenedorDown bg-black">
                 <ul>
                     <li>Inicio</li>
-                    <select name="categorias" id="categorias">
-                        <option value="">
-                            Categorías
-                        </option>
-                        <option value="">
-                            <a class="categoria" href="./productos/productos.html"><button onclick="filtrar('fruta')">mostrar frutas</button></a>
-                        </option><option value="">
-                            <a class="categoria" href="./productos/productos.html"><button onclick="filtrar('vegetal')">mostrar verdura</button></a>
-                        </option>
-                        <option value="">
-                            <a class="categoria" href="./productos/productos.html"><button onclick="filtrar(3)">mostrar todo</button></a>
-                        </option>
+                    <select name="categorias" id="categorias" onchange="filtrar(this.value)">
+                        <option value="">Categoría</option>
+                        <option value="fruta">mostrar frutas</option>
+                        <option value="vegetal">mostrar verdura</option>
+                        <option value="3">mostrar todo</option>
                     </select>
                     <li>Vender</li>
                     <li>Sobre Nosotros</li>
