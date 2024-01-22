@@ -29,21 +29,23 @@ function submit(event){
 let button = document.querySelector("button").addEventListener("click", submit);
 
 //Evento sobre un popup
-/* document.addEventListener("DOMContentLoaded", function (){
+/* window.addEventListener("DOMContentLoaded", function (){
     setTimeout(function () {
         let popup = document.getElementById("popup");
         let body = document.querySelector("body");
 
 
-        popup.style.display = "block";
-        body.style.opacity = "50%";
-        document.addEventListener("click", function(){
-            popup.style.display = "none";
+        if(popup){
+            popup.classList.replace('popup', 'contenedor-popup');
+            body.style.opacity = "1";
+        }
+        window.addEventListener("click", function(){
+            popup.classList.replace('contenedor-popup', 'popup');
             body.style.opacity = "100%"
         })
     }, 5000);
-});
- */
+}); */
+
 let objeto = [
     {name:'Manzana Verde - Unidad', tipo: 'fruta', src: './img/Manzana.png', precio: '$2.100',},
     {name:'Naranja', tipo: 'fruta', src: './img/Naranja.png', precio: '$1.495',},
@@ -74,19 +76,29 @@ for (let i = 0; i < 4; i++) {
     cardBody.classList.add("card-body")
     
     let img = document.createElement('img');
-        img.src = objeto[contador].src;
-        img.style.width = "250px";
-        img.style.height = "230px";
+    img.classList.add("img-fluid");
+    img.src = objeto[contador].src;
+    img.style.width = "250px";
+    img.style.height = "230px";
 
-    let parrafo = document.createElement('p');
-    parrafo.innerText = objeto[contador].precio;
-        
+    
     let titulo = document.createElement('h4');
     titulo.innerText = objeto[contador].name;
 
+    let parrafo = document.createElement('p');
+    parrafo.innerText = objeto[contador].precio;
+    parrafo.style.color = "black";
+    parrafo.style.textAlign = "left";
+    parrafo.style.marginTop = "0";
+
+    let boton = document.createElement('button');
+    boton.classList.add("btn", "btn-success");
+    boton.innerText = "Agregar al Carrito";
+    
     cardBody.appendChild(img);
     cardBody.appendChild(titulo);
     cardBody.appendChild(parrafo);
+    cardBody.appendChild(boton);
     card.appendChild(cardBody);
     col.appendChild(card);
     row.appendChild(col)

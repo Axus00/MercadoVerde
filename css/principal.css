@@ -29,6 +29,86 @@ h1 {
     display: none;
 }
 
+.pasarelaComprasOculto{
+    background-color: white;
+    display: none;
+    position: absolute;
+    width: 350px;
+    height: 100dvh;
+    right: 0px;
+    z-index: 1;
+}
+.sombra{
+    background: rgba(0, 0, 0, 0.411);
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    display: none;
+}
+.comprasCheckOut{
+    margin: 50px;
+    height: 100vh;
+}
+
+.comprasCheckOut h3{
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    width: 100%;
+}
+#cerrar {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+.productosSeleccionados{
+    display: flex;
+    width: 120vw;
+    height: 100px;
+    object-fit: cover;
+}
+.productoInformacion{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 30px;
+}
+.productoInformacion p{
+    color: var(--clr-cuartario);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    text-align: left;
+    margin: 0;
+    width: 50px;
+}
+.productoInformacion img{
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    position: absolute;
+    top: 120px;
+    left: 280px;
+}
+.botonFinalizar{
+    width: 100vw;
+    height: 100%;
+}
+.botonFinalizar button{
+    top: 600px;
+    left: 100px;
+    position: absolute;
+}
+.infoFinal{
+    display: flex;
+    position: absolute;
+    bottom: 150px;
+    margin: 20px;
+}
+.infoFinal h6{
+    margin-right: 10px;
+}
 /*Estilos del nav*/
 hr {
     border-color: black;
@@ -105,6 +185,7 @@ hr {
     width: 300px;
     height: 30px;
     border-radius: 0;
+    margin: 15px;
 }
 .botonBuscar{
     background-color: var(--clr-button);
@@ -121,6 +202,7 @@ hr {
 .contenedorIzquierdo{
     display: flex;
     flex-direction: row;
+    margin: 10px;
 }
 .contenedorIzquierdo img{
     cursor: pointer;
@@ -288,6 +370,7 @@ input::placeholder {
     text-align: left;
 
 }
+
 .informacion .comprar {
     display: flex;
     flex-direction: row;
@@ -409,10 +492,9 @@ input::placeholder {
 /*Estilos sobre banner para información de valor para el usuario*/
 .informacion-usuario{
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 200px;
 }
 .informacion-usuario-box{
@@ -422,7 +504,7 @@ input::placeholder {
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    align-items: center;
+    place-items: center;
     width: 1300px;
     height: 128px;
 }
@@ -436,10 +518,12 @@ input::placeholder {
     font-weight: bold;
     font-size: 15px;
 }
-.info-usuario-uno p {
+.info-usuario-uno .parrafo-info {
     font-family: var(--type-principal);
     font-size: 10px;
     color: gray;
+    text-align: left;
+    margin-top: 0;
 }
 .info-usuario-uno img{
     width: 150px;
@@ -456,10 +540,12 @@ input::placeholder {
     font-weight: bold;
     font-size: 15px;
 }
-.info-usuario-dos p {
+.info-usuario-dos .parrafo-info {
     font-family: var(--type-principal);
     font-size: 10px;
     color: gray;
+    text-align: left;
+    margin-top: 0;
 }
 .info-usuario-dos img{
     width: 150px;
@@ -476,10 +562,12 @@ input::placeholder {
     font-weight: bold;
     font-size: 15px;
 }
-.info-usuario-tres p{
+.info-usuario-tres .parrafo-info{
     font-family: var(--type-principal);
     font-size: 10px;
     color: gray;
+    text-align: left;
+    margin-top: 0;
 }
 .info-usuario-tres img {
     width: 150px;
@@ -496,10 +584,12 @@ input::placeholder {
     font-weight: bold;
     font-size: 15px;
 }
-.info-usuario-cuatro p {
+.info-usuario-cuatro .parrafo-info {
     font-family: var(--type-principal);
     font-size: 10px;
     color: gray;
+    text-align: left;
+    margin-top: 0;
 }
 .info-usuario-cuatro img{
     width: 150px;
@@ -508,6 +598,9 @@ input::placeholder {
 }
 
 /*Productos*/
+.contenedor{
+    margin: 100px;
+}
 .container-productos{
     display: flex;
     flex-direction: row;
@@ -598,6 +691,7 @@ footer {
     gap: 10px;
     place-items: center;
     align-items: center;
+    margin: 40px;
 }
 .footer-derecho{
     display: flex;
@@ -689,4 +783,61 @@ p {
 hr {
     margin: 0 5%;
     border-bottom: 1px solid #ccc;
+}
+
+/*Media querys*/
+/* @media screen and (max-width: 767.98px){
+    h1, h2, h3, h4, h5, h6{
+        font-size: 1.5rem;
+    }
+    .container-fluid, .container{
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+    }
+} */
+
+@media screen and (max-width: 700px) {
+    .banner-right{
+        display: none;
+    }
+    .contenedorMedio input{
+        width: 150px;
+    }
+}
+@media screen and (max-width: 664px) {
+    .contenedorMedio{
+        display: none;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .informacion-usuario-box{
+        width: 1000px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .informacion-usuario-box{
+        width: 900px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .informacion-usuario-box{
+        width: 700px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .informacion-usuario-box{
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+    .informacion-usuario-box .parrafo-info{
+        text-align: center;
+    }
+    .informacion-usuario-box{
+        margin-left: 130px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .left{
+        margin-right: 80px;
+    }
 }
