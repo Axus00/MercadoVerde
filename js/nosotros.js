@@ -1,5 +1,5 @@
 //se obtiene la url de la api maps de leaflet
-let mapa = L.map("contenedor-del-mapa")
+let mapa = L.map("ubicacion")
 .setView([6.2193831, -76.5849115], 11)
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {}).addTo(mapa);
@@ -13,6 +13,8 @@ let iconoMarker = L.icon({
 });
 
 
+let marcador = L.marker([nuevasCoordenadas.lat, nuevasCoordenadas.lng], { icon: iconoMarker }).addTo(mapa);
+marcador.bindPopup(coordenadas);
 
 
 //actualizar posición en el mapa
@@ -26,10 +28,8 @@ let nuevasCoordenadas = {
 
 
 if(nuevasCoordenadas){
-    let marcador = L.marker([nuevasCoordenadas.lat, nuevasCoordenadas.lng], { icon: iconoMarker }).addTo(mapa);
     let coordenadas = `Sus coordenadas son de latitud: ${nuevasCoordenadas.lat} y longitud: ${nuevasCoordenadas.lng}`
        
-    marcador.bindPopup(coordenadas);
     
     console.log(`Las nuevas coordenadas son: ${nuevasCoordenadas.lat} y ${nuevasCoordenadas.lng}`);
     mapa.setView([nuevasCoordenadas.lat, nuevasCoordenadas.lng], 11);
