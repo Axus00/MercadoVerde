@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+#contenedor-del-mapa{
+    margin: auto;
+    margin-top: 50px;
+    height: 500px;
+    max-width: 1000px;
+    border-radius: 5px;
+}
