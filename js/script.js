@@ -28,23 +28,7 @@ function submit(event){
 
 let button = document.querySelector("button").addEventListener("click", submit);
 
-//Evento sobre un popup
-/* window.addEventListener("DOMContentLoaded", function (){
-    setTimeout(function () {
-        let popup = document.getElementById("popup");
-        let body = document.querySelector("body");
 
-
-        if(popup){
-            popup.classList.replace('popup', 'contenedor-popup');
-            body.style.opacity = "1";
-        }
-        window.addEventListener("click", function(){
-            popup.classList.replace('contenedor-popup', 'popup');
-            body.style.opacity = "100%"
-        })
-    }, 5000);
-}); */
 
 let objeto = [
     {name:'Manzana Verde - Unidad', tipo: 'fruta', src: './img/Manzana.png', precio: '$2.100',},
@@ -70,7 +54,7 @@ for (let i = 0; i < 4; i++) {
     col.classList.add("col-md-3")
 
     const card = document.createElement("div")
-    card.classList.add("card", "d-flex", "flex-fill", "mt-4")
+    card.classList.add("card", "d-flex", "flex-fill", "mt-4", "h-100")
 
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body")
@@ -78,8 +62,9 @@ for (let i = 0; i < 4; i++) {
     let img = document.createElement('img');
     img.classList.add("img-fluid");
     img.src = objeto[contador].src;
-    img.style.width = "250px";
+    img.style.width = "100vw";
     img.style.height = "230px";
+    img.style.objectFit = "cover";
 
     
     let titulo = document.createElement('h4');
@@ -93,6 +78,7 @@ for (let i = 0; i < 4; i++) {
 
     let boton = document.createElement('button');
     boton.classList.add("btn", "btn-success");
+    boton.style.width = "100%";
     boton.innerText = "Agregar al Carrito";
     
     cardBody.appendChild(img);
@@ -117,48 +103,80 @@ function filtrar(filtro){
     window.location.href = "productos/productos.html"
 }
 
-/* for(let i = 0; i < 10; i++){
-        let e = objeto[i % objeto.length];
-    
-        let productos = document.getElementById('productos');
 
-        let row = document.createElement('div');
-        row.classList.add('row');
+//Evento para las cartas de prodctos en descuento
+let objetoDescuentos = [
+    {name:'Manzana Verde - Unidad', tipo: 'fruta', src: './img/Manzana.png', precio: '$2.100',},
+    {name:'Col china x 2000gr', tipo: 'vegetal', src: './img/Col China.png', precio: '$10.956',},
+    {name:'Lechuga x 500gr', tipo: 'vegetal', src: './img/Lechuga.png', precio: '$3.090',},
+    {name:'Berenjena', tipo: 'vegetal', src: './img/Berenjena.png', precio: '$2.820',},
+    {name:'Papa Capira', tipo: 'tubérculo', src: './img/PAPA.png', precio: '$1.600',},
+    {name:'Mazorca x 500gr', tipo: 'vegetal', src: './img/Mazorca.png', precio: '$4.145',},
+    {name:'Naranja', tipo: 'fruta', src: './img/Naranja.png', precio: '$1.495',},
+    {name:'Coliflor Fresca', tipo: 'fruta', src: './img/Coliflor.png', precio: '$5.640',},
+    {name:'Pimentón Verde', tipo: 'fruta', src: './img/Pimenton Verde.png', precio: '$3.645',},
+    {name:'Ají Jalapeño Verde x 500gr', tipo: 'fruta', src: './img/ají verde.png', precio: '$6.820',},
+    {name:'Tomate Rojo x 500gr', tipo: 'fruta', src: './img/Tomate.png', precio: '$3.045',},
+    {name:'Mango Tommy', tipo: 'fruta', src: './img/Mango.png', precio: '$2.990',}
+]
 
-        //se crean elemento DOM
-        let divCarta = document.createElement('div');
-        divCarta.classList.add('col-md-3', 'mb-3');
+const containerDescuento = document.getElementById("containerDescuento");
+console.log(containerDescuento);
+
+const rowDescuento = document.createElement('div');
+rowDescuento.classList.add("row");
+
+
+let cont = 0;
+for(let i = 0; i < 12; i++){
+    if(objetoDescuentos[cont]){
+        //se crea el div col-md-3
+        const colDescuento = document.createElement('div');
+        colDescuento.classList.add("col-md-3")
         
-        let divCard = document.createElement('div');
-        divCard.classList.add('card');
+        //elemento card 
+        const cardDescuento = document.createElement('div');
+        cardDescuento.classList.add("card", "d-flex", "flex-fill", "mt-4", "h-100");
         
-        
-        let cardBody = document.createElement('div');
-        cardBody.classList.add('card-body');
-        cardBody.style.display = "flex";
-        cardBody.style.flexDirection = "column";
-        
-        
-        let img = document.createElement('img');
-        img.src = objeto[i % objeto.length].src;
-        img.style.width = "250px";
-        img.style.height = "230px";
-        
-        let parrafo = document.createElement('p');
-        parrafo.innerText = objeto[i % objeto.length].precio;
-        
-        let titulo = document.createElement('h4');
-        titulo.innerText = e.name;
-        
-        //árbol del DOM
-        cardBody.appendChild(img);
-        cardBody.appendChild(titulo);
-        cardBody.appendChild(parrafo);
-        divCard.appendChild(cardBody);
-        divCarta.appendChild(divCard);
+        //elemento card-body
+        const cardBodyDescuento = document.createElement('div');
+        cardBodyDescuento.classList.add("card-body");
         
         
-        //se agrega al cuerpo del div de productos
-        productos.appendChild(divCarta);
-        //productos.appendChild(divCard);
-} */
+        //img
+        const imgDescuento = document.createElement('img');
+        imgDescuento.classList.add("img-fluid", "imagenDescuento")
+        imgDescuento.src = objetoDescuentos[cont].src;
+        imgDescuento.style.width = "100vw";
+        imgDescuento.style.height = "230px";
+        imgDescuento.style.objectFit = "cover";
+        
+        
+        //titulo
+        const titulosDescuento = document.createElement('h4');
+        titulosDescuento.innerText = objetoDescuentos[cont].name;
+        
+        //p
+        const parrafoDescuento = document.createElement('p');
+        parrafoDescuento.innerText = objetoDescuentos[cont].precio;
+        
+        //boton
+        const botonDescuento = document.createElement('button');
+        botonDescuento.innerText = "Añadir al Carrito";
+        botonDescuento.classList.add("btn", "btn-success");
+        
+        
+        //se agregan al padre
+        containerDescuento.appendChild(rowDescuento)
+        rowDescuento.appendChild(colDescuento);
+        colDescuento.appendChild(cardDescuento);
+        cardDescuento.appendChild(cardBodyDescuento);
+        cardBodyDescuento.appendChild(imgDescuento);
+        cardBodyDescuento.appendChild(titulosDescuento);
+        cardBodyDescuento.appendChild(parrafoDescuento);
+        cardBodyDescuento.appendChild(botonDescuento);
+
+        cont++;
+
+    }
+};

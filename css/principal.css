@@ -628,32 +628,158 @@ input::placeholder {
     transform: translateX(5px);
 }
 
+
+
+/*Sección productos en oferta*/
+.contenedorDescuento{
+    margin: 100px;
+}
+
+.contenedorDescuento p{
+    color: var(--clr-cuartario);
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    margin: 0;
+}
+.contenedorDescuento button{
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/*Sección banner informativo*/
+.banner-informativo{
+    position: relative;
+}
+.banner-informativo img{
+    width: 100%;
+    height: 527px;
+    object-fit: cover;
+
+}
+.texto{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 126px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.texto p{
+    font-family: 'Poppins', sans-serif;
+    color: var(--clr-button);
+    text-transform: uppercase;
+}
+.texto h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    width: 500px;
+    margin-left: 15%;
+}
+.texto button{
+    cursor: pointer;
+    color: white;
+    background-color: var(--clr-button);
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    margin-left: 38%;
+    transition: .3s;
+}
+.texto button:hover{
+    background-color: var(--clr-secundario);
+    transform: translateX(5px);
+}
+
+.contenedor-box-contadores{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 70%;
+    gap: 10px;
+}
+.carta-contador-uno{
+    background-color: white;
+    border-radius: 10px;
+}
+.texto-contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+}
+.texto-contenedor span{
+    color: var(--clr-secundario);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    margin-left: 60%;
+    margin-top: 1rem;
+    width: 96px;
+    height: 50px;
+}
+.texto-contenedor p {
+    color: var(--clr-cuartario);
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
 /*Sesion suscripcion*/
+.datosSuscripcion{
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    margin: auto;
+}
 .sesion-suscripcion {
     height: 200px;
-    margin-top: 50px;
+    margin-top: 0px;
 }
 .boletin-derecho{
     width: 448px;
     margin: 30px;
+    text-align: left;
 }
 .boletin-derecho h2{
     font-family: var(--type-principal);
     font-weight: bold;
+    text-align: left;
 }
 .boletin-derecho p{
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--type-principal);
+    font-weight: 300;
+    text-align: left;
+    margin-top: 0;
+    width: 400px;
 }
 .form-suscripcion{
+    display: flex;
     width: 538px;
-    margin: 40px;
+    top: 0;
+    left: 0;
+    margin: auto;
 }
 
 .form-suscripcion input{
     border-radius: 25px;
-    width: 300px;
-    height: 40px;
-
+    background-color: var(--clr-ternario);
+    border: none;
+    width: 400px;
+    height: 52px;
 }
 .form-suscripcion button{
     color: var(--clr-ternario);
@@ -661,7 +787,8 @@ input::placeholder {
     border-radius: 25px;
     border: none;
     width: 100px;
-    height: 40px;
+    height: 52px;
+    position: absolute;
 }
 .form-suscripcion button:hover{
     background-color: var(--clr-secundario);
@@ -673,7 +800,9 @@ input::placeholder {
     flex-direction: row;
     width: 150px;
     height: 50px;
-    margin: 40px;
+    top: 0;
+    left: 0;
+    margin: auto;
 }
 .social-icons i{
     margin-right: 20px;
@@ -692,6 +821,10 @@ footer {
     place-items: center;
     align-items: center;
     margin: 40px;
+    margin-top: 0;
+}
+.footer-columnas li{
+    margin-top: 5px;
 }
 .footer-derecho{
     display: flex;
@@ -785,17 +918,7 @@ hr {
     border-bottom: 1px solid #ccc;
 }
 
-/*Media querys*/
-/* @media screen and (max-width: 767.98px){
-    h1, h2, h3, h4, h5, h6{
-        font-size: 1.5rem;
-    }
-    .container-fluid, .container{
-        padding-right: 0.75rem;
-        padding-left: 0.75rem;
-    }
-} */
-
+/*Media Querys*/
 @media screen and (max-width: 700px) {
     .banner-right{
         display: none;

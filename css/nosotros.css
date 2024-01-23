@@ -17,9 +17,12 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
+html {
+    box-sizing: border-box;
+
+}
 
 
 ::-webkit-scrollbar{
@@ -319,7 +322,7 @@ input::placeholder {
 #ubicacion{
     margin: auto;
     margin-top: 50px;
-    height: 500px;
+    height: 400px;
     max-width: 1000px;
     border-radius: 5px;
 }
