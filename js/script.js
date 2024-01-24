@@ -30,72 +30,68 @@ let button = document.querySelector("button").addEventListener("click", submit);
 
 
 
-let objeto = [
-    {name:'Manzana Verde - Unidad', tipo: 'fruta', src: './img/Manzana.png', precio: '$2.100',},
-    {name:'Naranja', tipo: 'fruta', src: './img/Naranja.png', precio: '$1.495',},
-    {name:'Col china x 2000gr', tipo: 'vegetal', src: './img/Col China.png', precio: '$10.956',},
-    {name:'Lechuga x 500gr', tipo: 'vegetal', src: './img/Lechuga.png', precio: '$3.090',},
-    {name:'Berenjena', tipo: 'vegetal', src: './img/Berenjena.png', precio: '$2.820',},
-    {name:'Papa Capira', tipo: 'tubérculo', src: './img/PAPA.png', precio: '$1.600',},
-    {name:'Mazorca x 500gr', tipo: 'vegetal', src: './img/Mazorca.png', precio: '$4.145',},
-    {name:'Coliflor Fresca', tipo: 'fruta', src: './img/Coliflor.png', precio: '$5.640',},
-    {name:'Pimentón Verde', tipo: 'fruta', src: './img/Pimenton Verde.png', precio: '$3.645',},
-    {name:'Ají Jalapeño Verde x 500gr', tipo: 'fruta', src: './img/ají verde.png', precio: '$6.820',}
-]
-const container= document.getElementById("container");
-let contador = 0;
-a: while(true){
-const row = document.createElement("div");
-row.classList.add("row");
-for (let i = 0; i < 4; i++) {
+    let objeto = [];
+    fetch("http://localhost:3000/products")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        objeto = Array.from(data);
+        llenar();
+      });
 
-   
-    const col = document.createElement("div");
-    col.classList.add("col-md-3")
+function llenar() {
+  const container = document.getElementById("container");
+  let contador = 0;
+  a: while (true) {
+    const row = document.createElement("div");
+    row.classList.add("row");
+    for (let i = 0; i < 4; i++) {
+      const col = document.createElement("div");
+      col.classList.add("col-md-3");
 
-    const card = document.createElement("div")
-    card.classList.add("card", "d-flex", "flex-fill", "mt-4", "h-100")
+      const card = document.createElement("div");
+      card.classList.add("card", "d-flex", "flex-fill", "mt-4");
 
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body")
-    
-    let img = document.createElement('img');
-    img.classList.add("img-fluid");
-    img.src = objeto[contador].src;
-    img.style.width = "100vw";
-    img.style.height = "230px";
-    img.style.objectFit = "cover";
+      const cardBody = document.createElement("div");
+      cardBody.classList.add("card-body");
 
-    
-    let titulo = document.createElement('h4');
-    titulo.innerText = objeto[contador].name;
+      let img = document.createElement("img");
+      img.classList.add("img-fluid");
+      img.src = objeto[contador].src;
+      img.style.width = "250px";
+      img.style.height = "230px";
 
-    let parrafo = document.createElement('p');
-    parrafo.innerText = objeto[contador].precio;
-    parrafo.style.color = "black";
-    parrafo.style.textAlign = "left";
-    parrafo.style.marginTop = "0";
+      let titulo = document.createElement("h4");
+      titulo.innerText = objeto[contador].name;
 
-    let boton = document.createElement('button');
-    boton.classList.add("btn", "btn-success");
-    boton.style.width = "100%";
-    boton.innerText = "Agregar al Carrito";
-    
-    cardBody.appendChild(img);
-    cardBody.appendChild(titulo);
-    cardBody.appendChild(parrafo);
-    cardBody.appendChild(boton);
-    card.appendChild(cardBody);
-    col.appendChild(card);
-    row.appendChild(col)
-    contador++;
+      let parrafo = document.createElement("p");
+      parrafo.innerText = objeto[contador].precio;
+      parrafo.style.color = "black";
+      parrafo.style.textAlign = "left";
+      parrafo.style.marginTop = "0";
 
-    if(contador == (objeto.length)){
-        container.appendChild(row)
+      let boton = document.createElement("button");
+      boton.setAttribute("onclick", "mandarCarrito(this.parentElement)");
+      boton.classList.add("btn", "btn-success");
+      boton.innerText = "Agregar al Carrito";
+
+      cardBody.appendChild(img);
+      cardBody.appendChild(titulo);
+      cardBody.appendChild(parrafo);
+      cardBody.appendChild(boton);
+      card.appendChild(cardBody);
+      col.appendChild(card);
+      row.appendChild(col);
+      contador++;
+
+      if (contador == objeto.length) {
+        container.appendChild(row);
         break a;
+      }
     }
-}
-container.appendChild(row)
+    container.appendChild(row);
+  }
 }
 
 function filtrar(filtro){
@@ -104,29 +100,54 @@ function filtrar(filtro){
 }
 
 
+function mandarCarrito(elemento) {
+  console.log(elemento);
+  factoryCarrito(
+    elemento.children[0].src,
+    elemento.children[1].innerText,
+    elemento.children[2].innerText
+  );
+}
+
+function factoryCarrito(img, titulo, precio) {
+  console.log(img);
+  console.log(titulo);
+  console.log(precio);
+  let cantidadProductos = document.querySelector(".comprasCheckOut");
+  const base = document.getElementById("ProductosCarrito");
+  console.log(cantidadProductos.children.length);
+
+  let copia = `           <img src="${img}" alt="">
+                            <div class="productoInformacion">
+                                <p>${titulo}</p>
+                                <span>1kg x <strong>${precio}</strong></span>
+                                <img src="./img/cerrar.png" alt="boton cerrar" width="32px" height="32px" onclick="borrar(this)">
+                            </div>`;
+  let newProduct = base.cloneNode(true);
+  newProduct.innerHTML = copia;
+  newProduct.id += cantidadProductos.children.length - 2;
+  console.log(newProduct);
+  cantidadProductos.insertBefore(newProduct, cantidadProductos.children[2]);
+}
+
 //Evento para las cartas de prodctos en descuento
-let objetoDescuentos = [
-    {name:'Manzana Verde - Unidad', tipo: 'fruta', src: './img/Manzana.png', precio: '$2.100',},
-    {name:'Col china x 2000gr', tipo: 'vegetal', src: './img/Col China.png', precio: '$10.956',},
-    {name:'Lechuga x 500gr', tipo: 'vegetal', src: './img/Lechuga.png', precio: '$3.090',},
-    {name:'Berenjena', tipo: 'vegetal', src: './img/Berenjena.png', precio: '$2.820',},
-    {name:'Papa Capira', tipo: 'tubérculo', src: './img/PAPA.png', precio: '$1.600',},
-    {name:'Mazorca x 500gr', tipo: 'vegetal', src: './img/Mazorca.png', precio: '$4.145',},
-    {name:'Naranja', tipo: 'fruta', src: './img/Naranja.png', precio: '$1.495',},
-    {name:'Coliflor Fresca', tipo: 'fruta', src: './img/Coliflor.png', precio: '$5.640',},
-    {name:'Pimentón Verde', tipo: 'fruta', src: './img/Pimenton Verde.png', precio: '$3.645',},
-    {name:'Ají Jalapeño Verde x 500gr', tipo: 'fruta', src: './img/ají verde.png', precio: '$6.820',},
-    {name:'Tomate Rojo x 500gr', tipo: 'fruta', src: './img/Tomate.png', precio: '$3.045',},
-    {name:'Mango Tommy', tipo: 'fruta', src: './img/Mango.png', precio: '$2.990',}
-]
+let objetoDescuentos = [];
+    fetch("http://localhost:3000/productosDescuento")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        objetoDescuentos = Array.from(data);
+        llenerDescuentos();
+      });
 
-const containerDescuento = document.getElementById("containerDescuento");
-console.log(containerDescuento);
-
-const rowDescuento = document.createElement('div');
-rowDescuento.classList.add("row");
-
-
+      
+function llenerDescuentos(){
+  const containerDescuento = document.getElementById("containerDescuento");
+  console.log(containerDescuento);
+  
+  const rowDescuento = document.createElement('div');
+  rowDescuento.classList.add("row");
 let cont = 0;
 for(let i = 0; i < 12; i++){
     if(objetoDescuentos[cont]){
@@ -179,4 +200,5 @@ for(let i = 0; i < 12; i++){
         cont++;
 
     }
-};
+}
+}

@@ -25,18 +25,25 @@ window.addEventListener("DOMContentLoaded", function (){
 //evento para la pasarela de comrpas
 
 function mostrar(){
-    const carrito = document.getElementById('carrito');
-    const compras = document.getElementById('compras');
-    const closeShop = document.getElementById('closeShop');
-    
-    if(carrito){
-        alert("Compras")
-    }
+  /* const carrito = document.getElementById('carrito');
+    const closeShop = document.getElementById('closeShop'); */
 
-    closeShop.addEventListener('click', () => {
-        console.log('cerrar');
-        if(closeShop){
-            compras.style.display = "none";
-        }
-    });
+  const compras = document.getElementById("compras");
+  compras.style.display = "block";
+
+  const sombra = document.getElementById("sombras");
+  sombra.style.display = "block";
+}
+
+
+function cerrar() {
+  const compras = document.getElementById("compras");
+  compras.style.display = "none";
+
+  const sombra = document.getElementById("sombras");
+  sombra.style.display = "none";
+}
+
+function borrar(objeto) {
+  console.log(objeto);
 }
