@@ -16,7 +16,6 @@ window.addEventListener("DOMContentLoaded", function (){
         boton.addEventListener("click", function(){
             popupContainer.classList.replace('contenedor-popup', 'popup');
             opacidad.style.display = "none";
-            console.log('hay un click');
             
         })
     }, 5000);
@@ -44,6 +43,3 @@ function cerrar() {
   sombra.style.display = "none";
 }
 
-function borrar(objeto) {
-  console.log(objeto);
-}

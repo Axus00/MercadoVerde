@@ -30,69 +30,16 @@ let button = document.querySelector("button").addEventListener("click", submit);
 
 
 
-    let objeto = [];
-    fetch("http://localhost:3000/products")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        objeto = Array.from(data);
-        llenar();
-      });
+let objeto = [];
+fetch("http://localhost:3000/products")
+.then((response) => {
+  return response.json();
+})
+.then((data) => {
+  objeto = Array.from(data);
+  llenerDescuentos("containerPopulares");
+});
 
-function llenar() {
-  const container = document.getElementById("container");
-  let contador = 0;
-  a: while (true) {
-    const row = document.createElement("div");
-    row.classList.add("row");
-    for (let i = 0; i < 4; i++) {
-      const col = document.createElement("div");
-      col.classList.add("col-md-3");
-
-      const card = document.createElement("div");
-      card.classList.add("card", "d-flex", "flex-fill", "mt-4");
-
-      const cardBody = document.createElement("div");
-      cardBody.classList.add("card-body");
-
-      let img = document.createElement("img");
-      img.classList.add("img-fluid");
-      img.src = objeto[contador].src;
-      img.style.width = "250px";
-      img.style.height = "230px";
-
-      let titulo = document.createElement("h4");
-      titulo.innerText = objeto[contador].name;
-
-      let parrafo = document.createElement("p");
-      parrafo.innerText = objeto[contador].precio;
-      parrafo.style.color = "black";
-      parrafo.style.textAlign = "left";
-      parrafo.style.marginTop = "0";
-
-      let boton = document.createElement("button");
-      boton.setAttribute("onclick", "mandarCarrito(this.parentElement)");
-      boton.classList.add("btn", "btn-success");
-      boton.innerText = "Agregar al Carrito";
-
-      cardBody.appendChild(img);
-      cardBody.appendChild(titulo);
-      cardBody.appendChild(parrafo);
-      cardBody.appendChild(boton);
-      card.appendChild(cardBody);
-      col.appendChild(card);
-      row.appendChild(col);
-      contador++;
-
-      if (contador == objeto.length) {
-        container.appendChild(row);
-        break a;
-      }
-    }
-    container.appendChild(row);
-  }
-}
 
 function filtrar(filtro){
     localStorage.setItem("filtrado", filtro)
@@ -108,44 +55,64 @@ function mandarCarrito(elemento) {
   );
 }
 
-function factoryCarrito(img, titulo, precio) {
-  let cantidadProductos = document.querySelector(".comprasCheckOut");
-  const base = document.getElementById("ProductosCarrito");
+let suma = 0;
 
-  let copia = `           <img src="${img}" alt="">
-                            <div class="productoInformacion">
-                                <p>${titulo}</p>
-                                <span>1kg x <strong>${precio}</strong></span>
-                                <img src="./img/cerrar.png" alt="boton cerrar" width="32px" height="32px" onclick="borrar(this)">
-                            </div>`;
-  let newProduct = base.cloneNode(true);
-  newProduct.innerHTML = copia;
-  newProduct.id += cantidadProductos.children.length - 2;
-  console.log(newProduct);
-  cantidadProductos.insertBefore(newProduct, cantidadProductos.children[2]);
+function factoryCarrito(img, titulo, precio) {
+
+  let cantidadProductos = document.querySelector(".comprasCheckOut");
+  actualizarCarrito((cantidadProductos.children).length - 1, precio)
+  let copia = document.createElement("div");
+  copia.classList.add("productosSeleccionados")
+  copia.id = "ProductosCarrito" + ((cantidadProductos.children).length - 1)
+
+  copia.innerHTML = `
+    <img src="${img}" alt="">
+    <div class="productoInformacion">
+      <p>${titulo}</p>
+      <span>1kg x <strong id="precio${((cantidadProductos.children).length - 1)}">${precio}</strong></span>
+      <img src="./img/cerrar.png" alt="boton cerrar" width="32px" height="32px" onclick="borrar(this.parentElement)">
+    </div>`;
+
+  cantidadProductos.insertBefore(copia, cantidadProductos.children[cantidadProductos.children.length - 1]);
+}
+
+function borrar(objeto) {
+
+}
+
+function actualizarCarrito(cantidadActual, precio, control){
+  const cantidad = document.getElementById("cantidadProductos");
+  cantidad.innerText = `Carrito de Compra(${cantidadActual})`
+
+  const total = document.getElementById("totalAgregados");
+  let regex = /[.*+\-?^${}()|[\]\\]/g
+  suma += parseFloat(precio.replaceAll(regex, ""))
+  total.innerText = `$ ${suma}`
+
 }
 
 //Evento para las cartas de prodctos en descuento
-let objetoDescuentos = [];
-    fetch("http://localhost:3000/productosDescuento")
+objeto = []
+    fetch("http://localhost:3000/products")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        objetoDescuentos = Array.from(data);
-        llenerDescuentos();
+        objeto = Array.from(data);
+        llenerDescuentos("containerDescuento");
       });
 
       
-function llenerDescuentos(){
-  const containerDescuento = document.getElementById("containerDescuento");
-  console.log(containerDescuento);
-  
+function llenerDescuentos(lugar){
+
+  const containerDescuento = document.getElementById(lugar);
   const rowDescuento = document.createElement('div');
   rowDescuento.classList.add("row");
+
 let cont = 0;
+
 for(let i = 0; i < 12; i++){
-    if(objetoDescuentos[cont]){
+    if(objeto[cont]){
         //se crea el div col-md-3
         const colDescuento = document.createElement('div');
         colDescuento.classList.add("col-md-3")
@@ -162,7 +129,7 @@ for(let i = 0; i < 12; i++){
         //img
         const imgDescuento = document.createElement('img');
         imgDescuento.classList.add("img-fluid", "imagenDescuento")
-        imgDescuento.src = objetoDescuentos[cont].src;
+        imgDescuento.src = objeto[cont].src;
         imgDescuento.style.width = "100vw";
         imgDescuento.style.height = "230px";
         imgDescuento.style.objectFit = "cover";
@@ -170,16 +137,17 @@ for(let i = 0; i < 12; i++){
         
         //titulo
         const titulosDescuento = document.createElement('h4');
-        titulosDescuento.innerText = objetoDescuentos[cont].name;
+        titulosDescuento.innerText = objeto[cont].name;
         
         //p
         const parrafoDescuento = document.createElement('p');
-        parrafoDescuento.innerText = objetoDescuentos[cont].precio;
+        parrafoDescuento.innerText = objeto[cont].precio;
         
         //boton
         const botonDescuento = document.createElement('button');
         botonDescuento.innerText = "Añadir al Carrito";
         botonDescuento.classList.add("btn", "btn-success");
+        botonDescuento.setAttribute("onclick", "mandarCarrito(this.parentElement)")
         
         
         //se agregan al padre

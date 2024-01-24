@@ -58,19 +58,11 @@
                 <div id="compras" class="pasarelaComprasOculto">
                     <img id="cerrar" src="./img/cerrar-compras.png" alt="" onclick="cerrar()">
                     <div class="comprasCheckOut">
-                        <h3>Carrito de Compra(2)</h3>
-                        <div class="productosSeleccionados" id="ProductosCarrito">
-                            <img src="./img/Mango.png" alt="">
-                            <div class="productoInformacion">
-                                <p>Mango</p>
-                                <span>1kg x <strong>$ 1.495</strong></span>
-                                <img src="./img/cerrar.png" alt="boton cerrar" width="32px" height="32px">
-                            </div>
-                        </div>
+                        <h3 id="cantidadProductos">Carrito de Compra(0)</h3>
                         <div class="botonFinalizar">
                             <div class="infoFinal">
                                 <h6>Total: </h6>
-                                <span><strong>$ 1.495</strong></span>
+                                <span><strong id="totalAgregados">$ 0</strong></span>
                             </div>
                             <button class="btn btn-success" type="button">Finalizar Compra</button>
                         </div>
@@ -193,7 +185,7 @@
             </div>
         </div>
         <!--Sección de productos-->
-        <div class="contenedor d-flex flex-column" id="container">
+        <div class="contenedorDescuento d-flex flex-column" id="containerPopulares">
             <br>
             <div class="container-productos">
                 <h2>Productos Populares</h2>
