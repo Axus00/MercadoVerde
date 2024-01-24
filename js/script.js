@@ -101,7 +101,6 @@ function filtrar(filtro){
 
 
 function mandarCarrito(elemento) {
-  console.log(elemento);
   factoryCarrito(
     elemento.children[0].src,
     elemento.children[1].innerText,
@@ -110,12 +109,8 @@ function mandarCarrito(elemento) {
 }
 
 function factoryCarrito(img, titulo, precio) {
-  console.log(img);
-  console.log(titulo);
-  console.log(precio);
   let cantidadProductos = document.querySelector(".comprasCheckOut");
   const base = document.getElementById("ProductosCarrito");
-  console.log(cantidadProductos.children.length);
 
   let copia = `           <img src="${img}" alt="">
                             <div class="productoInformacion">
