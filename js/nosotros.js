@@ -1,28 +1,20 @@
 //se obtiene la url de la api maps de leaflet
 let mapa = L.map("ubicacion")
-.setView([0, 0], 14)
+.setView([6.2193831, -76.5849115], 11)
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png?', {}).addTo(mapa);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {}).addTo(mapa);
 
-
-let nuevasCoordenadas = {
-    lat: 6.2193831,
-    lng: -76.5849115
-};
-
-
-/* //Se cambia el marcador a una sirena de ambulancia
+//Se cambia el marcador a una sirena de ambulancia
 let iconoMarker = L.icon({
     iconUrl: '.././img/ambulancia.png',
     iconSize: [22, 22],
     iconAnchor: [16, 16],
     popupAnchor: [0, -16]
 });
- */
 
-let marcador = L.marker([nuevasCoordenadas.lat, nuevasCoordenadas.lng]).addTo(mapa);
+
+let marcador = L.marker([nuevasCoordenadas.lat, nuevasCoordenadas.lng], { icon: iconoMarker }).addTo(mapa);
 marcador.bindPopup(coordenadas);
-
 
 
 //actualizar posición en el mapa

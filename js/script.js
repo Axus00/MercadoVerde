@@ -69,25 +69,40 @@ function factoryCarrito(img, titulo, precio) {
     <img src="${img}" alt="">
     <div class="productoInformacion">
       <p>${titulo}</p>
-      <span>1kg x <strong id="precio${((cantidadProductos.children).length - 1)}">${precio}</strong></span>
-      <img src="./img/cerrar.png" alt="boton cerrar" width="32px" height="32px" onclick="borrar(this.parentElement)">
+      <span>1kg x <strong>${precio}</strong></span>
+      <img src="./img/cerrar.png" alt="boton cerrar" width="32px" height="32px" onclick="borrar((this.parentElement).parentElement)">
     </div>`;
 
   cantidadProductos.insertBefore(copia, cantidadProductos.children[cantidadProductos.children.length - 1]);
 }
 
 function borrar(objeto) {
-
+  let precio = objeto.querySelector("strong").innerText
+  objeto.remove()
+  
+  let cantidadProductos = document.querySelector(".comprasCheckOut");
+  actualizarCarrito((cantidadProductos.children).length - 2, precio, true)
 }
 
 function actualizarCarrito(cantidadActual, precio, control){
   const cantidad = document.getElementById("cantidadProductos");
+  const total = document.getElementById("totalAgregados"); 
+  const precioCarrito = document.getElementById("bolsa");
+
   cantidad.innerText = `Carrito de Compra(${cantidadActual})`
 
-  const total = document.getElementById("totalAgregados");
-  let regex = /[.*+\-?^${}()|[\]\\]/g
-  suma += parseFloat(precio.replaceAll(regex, ""))
-  total.innerText = `$ ${suma}`
+  if(control){
+    precio = String(precio)
+    suma -= parseInt(precio.replaceAll(/[.*+\-?^${}()|[\]\\]/g, ""))
+
+  }else{
+
+    suma += parseInt(precio.replaceAll(/[.*+\-?^${}()|[\]\\]/g, ""))
+    
+  }
+  var montoFormateado = suma.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  total.innerText = `$ ${montoFormateado}`
+  precioCarrito.innerText = `$ ${montoFormateado}`
 
 }
 
