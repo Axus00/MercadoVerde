@@ -28,11 +28,7 @@ html {
 ::-webkit-scrollbar{
     display: none;
 }
-
-h1 {
-    cursor: pointer;
-}
-
+/*Estilos para el carrito de compras*/
 .pasarelaComprasOculto{
     background-color: white;
     display: none;
@@ -113,7 +109,9 @@ h1 {
 .infoFinal h6{
     margin-right: 10px;
 }
-/*Estilos del nav*/
+
+/*Estilos generales de la página*/
+/*Nav*/
 hr {
     border-color: black;
 }
@@ -319,16 +317,243 @@ input::placeholder {
     margin-right: 10px;
 }
 
-#ubicacion{
-    margin: auto;
-    margin-top: 50px;
+/*Sección información sobre nosotros*/
+.proposito{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    top: 0;
+    left: 0;
+    margin: 150px;
+}
+.proposito h2{
+    color: black;
+    font-family: var(--type-principal);
+    font-weight: bold;
+    text-align: left;
+}
+.proposito p {
+    color: #ccc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+}
+.proposito img{
+    border-radius: 10px;
+    width: 716px;
     height: 400px;
-    max-width: 1000px;
-    border-radius: 5px;
+    object-fit: cover;
 }
 
-img{
+/*Estilos de la sección*/
+.contenedor-section{
+    position: relative;
+}
+.contenedor-section img{
+    height: 600px;
+    width: 100%;
     object-fit: cover;
+}
+.informacionValor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    position: absolute;
+    top: 0.2%;
+}
+.informacionValor img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    left: 10%;
+}
+.informacionTexto{
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    margin: 80px;
+    position: relative;
+}
+.informacionTexto h2{
+    font-family: var(--type-principal);
+    font-weight: bold;
+    font-size: 40px;
+}
+.informacionTexto p {
+    color: var(--clr-cuartario);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    width: 450px;
+}
+.iconosInfo{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    position: absolute;
+    left: 55%;
+    margin-top: 20%;
+}
+.iconosTexto {
+    display: flex;
+    gap: 10px;
+}
+.iconosTexto img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    margin: auto;
+}
+.infoTexto{
+    display: flex;
+    flex-direction: column;
+}
+.infoTexto h3{
+    font-family: var(--type-principal);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+}
+.infoTexto p {
+    color: var(--clr-cuartario);
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    margin-top: 0;
+}
+
+/*Sección Envío*/
+.sectionEnvio{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.sectionEnvio button{
+    background-color: var(--clr-button);
+    border: none;
+    border-radius: 43px;
+    color: var(--clr-ternario);
+    cursor: pointer;
+    width: 232px;
+    height: 51px;
+    top: 0;
+    left: 0;
+    margin-left: 70px;
+
+}
+.sectionEnvio button:hover{
+    background-color: var(--clr-secundario);
+    transition: .5s ease-in-out;
+}
+.contenedorEnvio{
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    margin: auto;
+}
+.contenedorEnvio h2 {
+    font-family: var(--type-principal);
+    font-weight: bold;
+    font-size: 50px;
+    text-align: left;
+    width: 600px;
+}
+.contenedorEnvio p {
+    color: var(--clr-cuartario);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    width: 600px;
+}
+.contenedorOption {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.options{
+    display: flex;
+}
+.options img{
+    top: 0;
+    left: 0;
+    margin: auto;
+}
+
+/*Sesion suscripcion*/
+.datosSuscripcion{
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    margin: auto;
+}
+.sesion-suscripcion {
+    height: 200px;
+    margin-top: 0px;
+}
+.boletin-derecho{
+    width: 448px;
+    margin: 30px;
+    text-align: left;
+}
+.boletin-derecho h2{
+    font-family: var(--type-principal);
+    font-weight: bold;
+    text-align: left;
+}
+.boletin-derecho p{
+    font-family: var(--type-principal);
+    font-weight: 300;
+    text-align: left;
+    margin-top: 0;
+    width: 400px;
+}
+.form-suscripcion{
+    display: flex;
+    width: 538px;
+    top: 0;
+    left: 0;
+    margin: auto;
+}
+
+.form-suscripcion input{
+    border-radius: 25px;
+    background-color: var(--clr-ternario);
+    border: none;
+    width: 400px;
+    height: 52px;
+}
+.form-suscripcion button{
+    color: var(--clr-ternario);
+    background-color: var(--clr-button);
+    border-radius: 25px;
+    border: none;
+    width: 100px;
+    height: 52px;
+    position: absolute;
+}
+.form-suscripcion button:hover{
+    background-color: var(--clr-secundario);
+    transition-duration: 1s;
+}
+.social-icons{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 150px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    margin: auto;
+}
+.social-icons i{
+    margin-right: 20px;
 }
 
 /*Footer*/
@@ -336,7 +561,6 @@ footer {
     background-color: var(--clr-cuartario);
     width: 100%;
     height: 300px;
-    position: fixed;
     bottom: 0;
 }
 .footer-columnas{
@@ -345,7 +569,7 @@ footer {
     gap: 10px;
     place-items: center;
     align-items: center;
-    margin: 40px;
+    margin: 20px;
 }
 .footer-derecho{
     display: flex;
