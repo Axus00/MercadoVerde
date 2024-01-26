@@ -1,14 +1,14 @@
 let objeto = [
-    {name:'Manzana Verde - Unidad', tipo: 'fruta', src: '.././img/Manzana.png', precio: '$2.100',},
-    {name:'Naranja', tipo: 'fruta', src: '.././img/Naranja.png', precio: '$1.495',},
-    {name:'Col china x 2000gr', tipo: 'vegetal', src: '.././img/Col China.png', precio: '$10.956',},
-    {name:'Lechuga x 500gr', tipo: 'vegetal', src: '.././img/Lechuga.png', precio: '$3.090',},
-    {name:'Berenjena', tipo: 'vegetal', src: '.././img/Berenjena.png', precio: '$2.820',},
-    {name:'Papa Capira', tipo: 'tubérculo', src: '.././img/PAPA.png', precio: '$1.600',},
-    {name:'Mazorca x 500gr', tipo: 'vegetal', src: '.././img/Mazorca.png', precio: '$4.145',},
-    {name:'Coliflor Fresca', tipo: 'fruta', src: '.././img/Coliflor.png', precio: '$5.640',},
-    {name:'Pimentón Verde', tipo: 'fruta', src: '.././img/Pimenton Verde.png', precio: '$3.645',},
-    {name:'Ají Jalapeño Verde x 500gr', tipo: 'fruta', src: '.././img/Chile Rojo.png', precio: '$6.820',}
+    {name:'Manzana Verde - Unidad', tipo: 'fruta', src: '.././assets/img/Manzana.png', precio: '$2.100',},
+    {name:'Naranja', tipo: 'fruta', src: '.././assets/img/Naranja.png', precio: '$1.495',},
+    {name:'Col china x 2000gr', tipo: 'vegetal', src: '.././assets/img/Col China.png', precio: '$10.956',},
+    {name:'Lechuga x 500gr', tipo: 'vegetal', src: '.././assets/img/Lechuga.png', precio: '$3.090',},
+    {name:'Berenjena', tipo: 'vegetal', src: '../.assets/img/Berenjena.png', precio: '$2.820',},
+    {name:'Papa Capira', tipo: 'tubérculo', src: '.././assets/img/PAPA.png', precio: '$1.600',},
+    {name:'Mazorca x 500gr', tipo: 'vegetal', src: '.././assets/img/Mazorca.png', precio: '$4.145',},
+    {name:'Coliflor Fresca', tipo: 'fruta', src: '.././assets/img/Coliflor.png', precio: '$5.640',},
+    {name:'Pimentón Verde', tipo: 'fruta', src: '.././assets/img/Pimenton Verde.png', precio: '$3.645',},
+    {name:'Ají Jalapeño Verde x 500gr', tipo: 'fruta', src: '../.assets/img/Chile Rojo.png', precio: '$6.820',}
 ]
 const container= document.getElementById("container");
 let contador = 0;

@@ -1,0 +1,72 @@
+/*Tipografía del proyecto*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400&display=swap');
+
+
+:root {
+    /*Var de la paleta de colores que se usaría*/
+    --clr-principal: #29fe1d;
+    --clr-secundario: #07e500;
+    --clr-ternario: #fff;
+    --clr-cuartario: #000; 
+    /*Var de la tipografía*/
+    --type-principal: 'Montserrat', sans-serif; 
+}
+
+/*Estilos generales*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Estilos del identificador del usuario*/
+.container-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border: 1px solid rgba(0, 0, 0, .25);
+    width: 300px;
+    height: 400px;
+}
+.identificador-usuario{
+    background-color: var(--clr-cuartario);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+.identificador-usuario p{
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+.identificador-usuario img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-right: 10px;
+    margin: 10px;
+    
+}
+
+#close {
+    cursor: pointer;
+    height: 10px;
+    object-fit: cover;
+}
+
+.inputText {
+    display: flex;
+    flex-direction: row;
+}
+.inputText textarea {
+    height: 50px;
+}
+.inputText button {
+    font-family: var(--type-principal);
+    font-size: 10px;
+    border: none;
+    background-color: var(--clr-cuartario);
+    color: var(--clr-ternario);
+    width: 40px;
+}

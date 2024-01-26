@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Var de la paleta de colores que se usaría */
+    --clr-principal: #29fe1d;
+    --clr-secundario: #07e500;
+    --clr-card: #84D187;
+    --clr-button: #00B207;
+    --clr-ternario: #fff;
+    --clr-cuartario: #000;
+    /* Var de la tipografía */
+    --type-principal: 'Montserrat', sans-serif;
+}
+
+.opacidad{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.429);
+    z-index: 1;
+    display: none;
+}
+
+/* Estilos para el popup y contenido */
+.content-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    gap: 20px;
+    margin-top: 270px;
+    margin-left: 290px;
+    width: 800px;
+    z-index: 1;
+}
+
+/* Estilos para el contenedor del popup */
+.contenedor-popup {
+    display: block;
+}
+
+/* Estilos para mostrar el popup */
+.popup{
+    display: none;
+    position: fixed; /* Cambia el posicionamiento a fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Estilos para la imagen dentro del contenido del popup */
+.content-popup img {
+    border-radius: 5px;
+    width: 300px;
+    height: 450px;
+    margin: 5px;
+    object-fit: cover;
+}
+/* Estilos para los botones en el contenido del popup */
+.content-popup button {
+    background-color: var(--clr-button);
+    border: none;
+    border-radius: 43px;
+    color: white;
+    cursor: pointer;
+    width: 290px;
+    height: 30px;
+}
+
+.content-popup button:hover {
+    background-color: var(--clr-secundario);
+    transition: .5s ease-in-out;
+}
+
+/* Estilos para el formulario dentro del contenido del popup */
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin: 50px;
+}
+
+.form h2 {
+    font-family: var(--type-principal);
+    font-weight: bold;
+    text-align: center;
+    width: 350px;
+}
+
+.form p {
+    width: 300px;
+    text-align: center;
+    color: gray;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+/* Estilos para los inputs y botones del formulario */
+.form-input input {
+    border-radius: 46px;
+    border: 1px solid black;
+    width: 200px;
+    height: 25px;
+}
+
+.form-input input::placeholder {
+    text-align: center;
+}
+
+.form-input button {
+    border: none;
+    background-color: var(--clr-button);
+    border-radius: 43px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    width: 100px;
+    height: 40px;
+    margin-top: -5px;
+}
+
+.form-input button:hover {
+    background-color: var(--clr-secundario);
+    transition: .4s ease-in-out;
+}
+#email{
+    width: 370px;
+    border: 1px solid black;
+    border-color: #ccc;
+}
