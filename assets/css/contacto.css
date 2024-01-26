@@ -237,6 +237,9 @@ hr {
     justify-content: space-around;
     height: 60px;
 }
+.contenedorDown a {
+    text-decoration: none;
+}
 .contenedorDown ul{
     color: var(--clr-ternario);
     display: flex;
