@@ -238,6 +238,9 @@ hr {
     flex-direction: row;
     margin: 10px;
 }
+.contenedorDown a {
+    text-decoration: none;
+}
 .contenedorDown li{
     color: #ccc;
     cursor: pointer;

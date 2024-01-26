@@ -24,7 +24,6 @@ html {
 
 }
 
-
 ::-webkit-scrollbar{
     display: none;
 }
@@ -554,6 +553,46 @@ input::placeholder {
 }
 .social-icons i{
     margin-right: 20px;
+}
+
+/*Estilos de la sección fundadores*/
+.containerFounders{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.containerFounders h2{
+    font-family: var(--type-principal);
+    margin-top: 20px;
+
+}
+.containerFounders p {
+    color: var(--clr-cuartario);
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0;
+    width: 550px;
+}
+.cardsFounders{
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 312px;
+    height: 368px;
+}
+.contentBox img{
+    border-radius: 10px;
+}
+.contentBox h5{
+    font-family: var(--type-principal);
+    margin-top: 50px;
+    text-align: left;
+}
+.contentBox p {
+    color: #ccc;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    margin-top: 0;
 }
 
 /*Footer*/
