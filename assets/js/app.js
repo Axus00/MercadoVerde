@@ -3,43 +3,27 @@
 window.addEventListener("DOMContentLoaded", function (){
     setTimeout(function () {
         console.log('hay un evento');
-        
-        const boton = document.getElementById('close');
         const popupContainer = document.getElementById('popup');
         const opacidad = document.querySelector('#fondo-opaco');
+        
+        const boton = document.getElementById('close');
+        boton.setAttribute("onclick", "cerrarModal()")
 
 
         if(popupContainer){
             popupContainer.classList.replace('popup', 'contenedor-popup');
             opacidad.style.display = "block";
         }
-        boton.addEventListener("click", function(){
-            popupContainer.classList.replace('contenedor-popup', 'popup');
-            opacidad.style.display = "none";
-            
-        })
     }, 5000);
 });
-
+function cerrarModal(){
+  const popupContainer = document.getElementById('popup');
+  const opacidad = document.querySelector('#fondo-opaco');
+  popupContainer.classList.replace('contenedor-popup', 'popup');
+  opacidad.style.display = "none";
+  console.log("malparido")
+  
+}
 //evento para la pasarela de comrpas
 
-function mostrar(){
-  /* const carrito = document.getElementById('carrito');
-    const closeShop = document.getElementById('closeShop'); */
-
-  const compras = document.getElementById("compras");
-  compras.style.display = "block";
-
-  const sombra = document.getElementById("sombras");
-  sombra.style.display = "block";
-}
-
-
-function cerrar() {
-  const compras = document.getElementById("compras");
-  compras.style.display = "none";
-
-  const sombra = document.getElementById("sombras");
-  sombra.style.display = "none";
-}
 
