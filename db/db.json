@@ -84,6 +84,22 @@
             "gender": "male",
             "comercial_activity": "natural person",
             "password": "12345678"
+        },
+        {
+            "name": "Pablo",
+            "lastName": "Londoño",
+            "email": "juanpablolc414@gmail.com",
+            "gender": "male",
+            "comercial_activity": "natural person",
+            "password": "patitoloko321"
+        },
+        {
+            "name": "Santiago",
+            "lastName": "Giraldo",
+            "email": "correo@correo.com",
+            "gender": "male",
+            "comercial_activity": "natural person",
+            "password": "charry"
         }
     ]
 }

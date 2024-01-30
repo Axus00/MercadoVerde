@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--CSS-->
     <link rel="stylesheet" href="./assets/css/contacto.css">
-    <!--leaflet-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
     
@@ -53,26 +50,13 @@
                     <img onclick="mostrar()" class="img-fluid" src="./assets/img/bolsa-compras.png" alt="bolsa de compras para el carrito" id="carrito">
                     <div class="carritoCompras">
                         <p>Mis Compras:</p>
-                        <span><strong id="bolsa">$0</strong></span>
+                        <span><strong>$57.000</strong></span>
                     </div>
                 </div>
             </div>
     
-
-            <div class="sombra" id="sombras">
-                <div id="compras" class="pasarelaComprasOculto">
-                    <img id="cerrar" src="./assets/img/cerrar-compras.png" alt="" onclick="cerrar()">
-                    <div class="comprasCheckOut">
-                        <h3 id="cantidadProductos">Carrito de Compra(0)</h3>
-                        <div class="botonFinalizar">
-                            <div class="infoFinal">
-                                <h6>Total: </h6>
-                                <span><strong id="totalAgregados">$ 0</strong></span>
-                            </div>
-                            <button class="btn btn-success" type="button">Finalizar Compra</button>
-                        </div>
-                    </div>
-                </div>
+            <div id="compras" class="pasarelaComprasOculto">
+                
             </div>
     
             <div class="contenedorDown bg-black">
@@ -94,7 +78,7 @@
                 </div>
             </div>            
         </nav>
-        <img class="imagenTop" src="./assets/img/BANNER PAGINAS DE UBICACION.png" alt="imagen banner ubicación">
+        <img class="imagenTop" src="./assets/img/banner-paginas.png" alt="imagen banner ubicación">
         
         <!--inicio formulario-->
         <div class="contenedor-formulario">
@@ -137,7 +121,7 @@
 
         </div>
         <!--Sección donde va el mapa con la ubicación-->
-        <div id="ubicacion"></div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31730.685840091573!2d-75.6214834256836!3d6.219383100000022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429e1dab04e05%3A0x5a77c25c8a5faf3a!2sDe%20Moda%20Outlet!5e0!3m2!1ses!2sco!4v1706384282640!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         <!--Sesión suscripción-->
         <div class="container-fluid bg-light d-flex flex-row sesion-suscripcion">
@@ -172,37 +156,37 @@
             <div class="columna-uno">
                 <h3>Mí Cuenta</h3>
                 <ul>
-                    <li>Mí Cuenta</li>
-                    <li>Historial de Órdenes</li>
-                    <li>Carrito de Compras</li>
-                    <li>Lista de Deseos</li>
+                    <a href=""><li>Mí Cuenta</li></a>
+                    <a href=""><li>Historial de Órdenes</li></a>
+                    <a href=""><li>Carrito de Compras</li></a>
+                    <a href=""><li>Lista de Deseos</li></a>
                 </ul>
             </div>
             <div class="columna-dos">
                 <h3>Ayuda</h3>
                 <ul>
-                    <li>Contacto</li>
-                    <li>Preguntas Frecuentes</li>
-                    <li>Términos y Condiciones</li>
-                    <li>Políticas de Provacidad</li>
+                    <a href=""><li>Contacto</li></a>
+                    <a href=""><li>Preguntas Frecuentes</li></a>
+                    <a href=""><li>Términos y Condiciones</li></a>
+                    <a href=""><li>Políticas de Provacidad</li></a>
                 </ul>
             </div>
             <div class="columna-tres">
                 <h3>Accesibilidad</h3>
                 <ul>
-                    <li>Acerca de</li>
-                    <li>Tienda</li>
-                    <li>Productos</li>
-                    <li>Vigilar Órden</li>
+                    <a href=""><li>Acerca de</li></a>
+                    <a href=""><li>Tienda</li></a>
+                    <a href=""><li>Productos</li></a>
+                    <a href=""><li>Vigilar Órden</li></a>
                 </ul>
             </div>
             <div class="columna-cuatro">
                 <h3>Categorías</h3>
                 <ul>
-                    <li>Frutas</li>
-                    <li>Vegetales</li>
-                    <li>Publicar</li>
-                    <li>Comprar</li>
+                    <a href=""><li>Frutas</li></a>
+                    <a href=""><li>Vegetales</li></a>
+                    <a href=""><li>Publicar</li></a>
+                    <a href=""><li>Comprar</li></a>
                 </ul>
             </div>
         </div>
@@ -210,7 +194,7 @@
         <p>MercadoVerde &copy; 2024. Todos los derechos reservados</p>
     </footer>
     <!--Script para ubicación-->
-    <script src="./assets/js/nosotros.js"></script>
+    <script src="./assets/js/contacto.js"></script>
 
     <!--Script Principal-->
     <script src="./assets/js/script.js"></script>

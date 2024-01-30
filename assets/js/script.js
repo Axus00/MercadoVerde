@@ -1,29 +1,3 @@
-//globales
-let suma = 0;
-let local = {}
-let objeto = [];
-atributoLocal = 0;
-if(location.href.includes("index.html")){
-localStorage.setItem("controlador", "no") 
-}
-
-if(localStorage.getItem("productos")){
-  let cantidadProductos = document.querySelector(".comprasCheckOut");
-  let objeto = JSON.parse(localStorage.getItem("productos"))
-  for (const key in objeto) {
-    console.log(key + " : " + objeto[key])
-    let copia = document.createElement("div");
-    copia.classList.add("productosSeleccionados")
-    copia.id = "ProductosCarrito" + ((cantidadProductos.children).length - 1)
-    copia.innerHTML = objeto[key]
-    let precio = copia.querySelector("strong").innerText
-    actualizarCarrito((cantidadProductos.children).length - 1, precio)
-    cantidadProductos.insertBefore(copia, cantidadProductos.children[cantidadProductos.children.length - 1]);
-        
-      
-    }
-  }
-
 //función para cuando le den click al logo de la web
 let titulo = document.getElementById("titulo");
 
@@ -56,7 +30,7 @@ let button = document.querySelector("button").addEventListener("click", submit);
 
 
 
-
+let objeto = [];
 fetch("http://localhost:3000/products")
 .then((response) => {
   return response.json();
@@ -81,32 +55,7 @@ function mandarCarrito(elemento) {
   );
 }
 
-//evento cerrar y abrir carrito
-
-
-function mostrar(){
-  /* const carrito = document.getElementById('carrito');
-    const closeShop = document.getElementById('closeShop'); */
-
-  const compras = document.getElementById("compras");
-  compras.style.display = "block";
-
-  const sombra = document.getElementById("sombras");
-  sombra.style.display = "block";
-}
-
-
-function cerrar() {
-  const compras = document.getElementById("compras");
-  compras.style.display = "none";
-
-  const sombra = document.getElementById("sombras");
-  sombra.style.display = "none";
-}
-
-
-
-
+let suma = 0;
 
 function factoryCarrito(img, titulo, precio) {
 
@@ -121,12 +70,8 @@ function factoryCarrito(img, titulo, precio) {
     <div class="productoInformacion">
       <p>${titulo}</p>
       <span>1kg x <strong>${precio}</strong></span>
-      <img src="./assets/img/cerrar.png" alt="boton cerrar" width="32px" height="32px" onclick="borrar((this.parentElement).parentElement)">
+      <img src="./img/cerrar.png" alt="boton cerrar" width="32px" height="32px" onclick="borrar((this.parentElement).parentElement)">
     </div>`;
-
-    local["hijo"+atributoLocal] = copia.innerHTML
-    localStorage.setItem("productos", JSON.stringify(local))
-    atributoLocal++
 
   cantidadProductos.insertBefore(copia, cantidadProductos.children[cantidadProductos.children.length - 1]);
 }
@@ -234,5 +179,5 @@ for(let i = 0; i < 12; i++){
 
     }
 }
-localStorage.setItem("controlador", "si")
 }
+

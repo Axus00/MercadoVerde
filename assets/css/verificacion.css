@@ -21,11 +21,14 @@
     box-sizing: border-box;
 }
 
-::-webkit-scrollbar{
+h1 {
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
     display: none;
 }
 
-/*Estilos para el carrito de compras*/
 .pasarelaComprasOculto{
     background-color: white;
     display: none;
@@ -85,7 +88,6 @@
     height: 32px;
     object-fit: cover;
     position: absolute;
-    top: 120px;
     left: 280px;
 }
 .botonFinalizar{
@@ -106,9 +108,7 @@
 .infoFinal h6{
     margin-right: 10px;
 }
-
-/*Estilos generales de la página*/
-/*Nav*/
+/*Estilos del nav*/
 hr {
     border-color: black;
 }
@@ -232,14 +232,14 @@ hr {
     justify-content: space-around;
     height: 60px;
 }
-.contenedorDown a{
-    text-decoration: none;
-}
 .contenedorDown ul{
     color: var(--clr-ternario);
     display: flex;
     flex-direction: row;
     margin: 10px;
+}
+.contenedorDown a {
+    text-decoration: none;
 }
 .contenedorDown li{
     color: #ccc;
@@ -317,88 +317,42 @@ input::placeholder {
     margin-right: 10px;
 }
 
-
-
-/*Diseño formulario*/
-.form {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-.card {
-    width: 500px;
-}
-.card-body{
-    align-items: center;
+/*Estilos panel*/
+.formulario {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 15px;
+    flex-direction: row;
+    gap: 20px;
 }
-.card-body h1 {
-    margin: 20px;
-    font-family: var(--type-principal);
-}
-
-@media screen and (max-width: 768px){
-    .card-box{
-        display: none;
-    }
-}
-
-.form-control{
-    border: none;
-    border-bottom: 1px solid #cccccc;
-    width: 400px;
-    margin: 10px;
-}
-.form-control:focus {
-    outline: none;
-}
-.form-control::placeholder {
-    text-align: left;
-}
-
-/*Estilo del button*/
-.btn{
-    background-color: var(--clr-principal);
-    color: black;
-    border: none;
-    text-transform: uppercase;
-    width: 100%;
-    border-radius: 25px;
-}
-.btn:hover{
-    background-image: url('/img/plantas.jpg');
-    background-size: cover;
-    box-shadow: inset;
-    color: white;
-    transition: .5s ease-in-out;
-}
-form span{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    margin: 20px;
-}
-form a{
-    cursor: pointer;
-    color: var(--clr-cuartario);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    text-decoration: none;
-}
-form a:hover {
-    color: var(--clr-button);
-    transition: .4s ease;
-}
-.form-check {
+.formulario2 {
     display: flex;
     justify-content: space-between;
+}
+.formulario3 {
     gap: 20px;
-    margin-bottom: 20px;
 }
-.form-check a {
-    font-weight: 300;
+.checkDireccion {
+    display: flex;
+    gap: 20px;
 }
+.checkDireccion p {
+    color: var(--clr-cuartario);
+    font-family: 'Poppins',sans-serif;
+}
+.check {
+    display: flex;
+    gap: 20px;
+}
+.check p{
+    color: var(--clr-cuartario);
+    font-family: 'Poppins', sans-serif;
+}
+.botonCompra {
+    border-radius: 25px;
+    border: none;
+    background-color: var(--clr-button);
+    width: 100%;
+}
+
 /*Sesion suscripcion*/
 .datosSuscripcion{
     display: flex;
@@ -520,10 +474,10 @@ p {
 .columna-cuatro {
     margin-top: 20px;
 }
-.columna-uno h3,
-.columna-dos h3,
-.columna-tres h3,
-.columna-cuatro h3{
+.columna-uno h4,
+.columna-dos h4,
+.columna-tres h4,
+.columna-cuatro h4{
     font-family: var(--type-principal);
     font-size: 18px;
     color: var(--clr-ternario);
@@ -558,50 +512,4 @@ p {
 hr {
     margin: 20px 10%;
     border-bottom: 1px solid #ccc;
-}
-/*Media Querys*/
-@media screen and (max-width: 700px) {
-    .banner-right{
-        display: none;
-    }
-    .contenedorMedio input{
-        width: 150px;
-    }
-}
-@media screen and (max-width: 664px) {
-    .contenedorMedio{
-        display: none;
-    }
-}
-@media screen and (max-width: 1400px) {
-    .informacion-usuario-box{
-        width: 1000px;
-    }
-}
-@media screen and (max-width: 1200px) {
-    .informacion-usuario-box{
-        width: 900px;
-    }
-}
-@media screen and (max-width: 1000px) {
-    .informacion-usuario-box{
-        width: 700px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .informacion-usuario-box{
-        grid-template-columns: repeat(2, 1fr);
-        text-align: center;
-    }
-    .informacion-usuario-box .parrafo-info{
-        text-align: center;
-    }
-    .informacion-usuario-box{
-        margin-left: 130px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .left{
-        margin-right: 80px;
-    }
 }

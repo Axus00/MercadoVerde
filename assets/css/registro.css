@@ -476,7 +476,8 @@ input::placeholder {
 footer {
     background-color: var(--clr-cuartario);
     width: 100%;
-    height: 300px;
+    min-height: 300px;
+    padding: 20px 0;
 }
 .footer-columnas{
     display: grid;
@@ -484,8 +485,11 @@ footer {
     gap: 10px;
     place-items: center;
     align-items: center;
-    margin: 40px;
-    margin-top: 0;
+    margin: 20px;
+}
+.footer-columnas a {
+    color: #ccc;
+    text-decoration: none;
 }
 .footer-columnas li{
     margin-top: 5px;
@@ -509,76 +513,51 @@ footer {
 p {
     color: #ccc;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .columna-uno,
 .columna-dos,
 .columna-tres, 
 .columna-cuatro {
-    margin-top: 40px;
+    margin-top: 20px;
 }
-.columna-uno h3 {
+.columna-uno h3,
+.columna-dos h3,
+.columna-tres h3,
+.columna-cuatro h3{
     font-family: var(--type-principal);
-    font-size: 20px;
+    font-size: 18px;
     color: var(--clr-ternario);
-    margin-left: 27px;
+    margin-left: 0;
 }
-.columna-uno ul {
+
+.columna-uno ul,
+.columna-dos ul,
+.columna-tres ul,
+.columna-cuatro ul{
     cursor: pointer;
     color: #ccc;
     font-family: 'Poppins', sans-serif;
     list-style: none;
+    padding: 0;
 }
-.columna-uno li:hover {
+
+.columna-uno li,
+.columna-dos li,
+.columna-tres li,
+.columna-cuatro li{
+    margin-top: 5px;
+}
+
+.columna-uno li:hover,
+.columna-dos li:hover,
+.columna-tres li:hover,
+.columna-cuatro li:hover{
     color: var(--clr-ternario);
 }
-.columna-dos h3 {
-    font-family: var(--type-principal);
-    font-size: 20px;
-    color: var(--clr-ternario);
-    margin-left: 27px;
-}
-.columna-dos ul {
-    cursor: pointer;
-    color: #ccc;
-    font-family: 'Poppins', sans-serif;
-    list-style: none;
-}
-.columna-dos li:hover {
-    color: var(--clr-ternario);
-}
-.columna-tres h3 {
-    font-family: var(--type-principal);
-    font-size: 20px;
-    color: var(--clr-ternario);
-    margin-left: 27px;
-}
-.columna-tres ul {
-    cursor: pointer;
-    color: #ccc;
-    font-family: 'Poppins', sans-serif;
-    list-style: none;
-}
-.columna-tres li:hover {
-    color: var(--clr-ternario);
-}
-.columna-cuatro h3 {
-    font-family: var(--type-principal);
-    font-size: 20px;
-    color: var(--clr-ternario);
-    margin-left: 27px;
-}
-.columna-cuatro ul {
-    cursor: pointer;
-    color: #ccc;
-    font-family: 'Poppins', sans-serif;
-    list-style: none;
-}
-.columna-cuatro li:hover {
-    color: var(--clr-ternario);
-}
+
 hr {
-    margin: 0 5%;
+    margin: 20px 10%;
     border-bottom: 1px solid #ccc;
 }
 

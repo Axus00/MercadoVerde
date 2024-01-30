@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--Meta datos para posicionamiento-->
+        <meta name="description" content="Semilla Verde es una plataforma que conecta directamente a agricultores y compradores, eliminando intermediarios y mejorando la eficiencia en la cadena de suministro agrícola.">
+        <meta name="keywords" content="agricultura, cadena de suministro, intermediarios, plataforma agrícola, agricultores, compradores">
+        <meta name="author" content="Semilla Verde">
+        <title>MercadoVerde</title>
+        <!--Favicon-->
+        <link rel="shortcut icon" href="./assets/img/LOGO MERCADO VERDE.svg" type="image/x-icon">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+        <!--CSS-->
+        <link rel="stylesheet" href="./assets/css/panel.css">
+    </head>
+<body>
+    
+    <!--Nav-->
+    <nav class=" navbar-light bg-light d-flex flex-column">   
+        <div class="banner">
+            <div class="banner-right">
+                <img class="img-fluid" src="./assets/img/location.png" alt="imagen de locación">
+                <p>UBICACIÓN: Outlet de la moda Guayabal RIWI</p>
+            </div>
+            <div class="banner-left">
+                <select name="select" id="select" onchange="traducir(this.value)">
+                    <option value="">Idioma</option>
+                    <option value="en">Inglés</option>
+                    <option value="es">Español</option>
+                </select>
+                <p class="parrafo"><a href="./login.html">Iniciar Sesión</a> <a href="./registro.html">Registro</a></p>
+            </div>
+        </div>
+        <hr >
+        <div class="bannerPrincipal">
+            <div class="contenedorDerecho">
+                <img class="img-fluid logo" src="./assets/img/LOGO MERCADO VERDE.svg" alt="logo de la página web">
+                <h1 id="titulo">Mercado<span>Verde</span></h1>
+            </div>
+            <div class="contenedorMedio">
+                <input type="text" placeholder="Search Products">
+                <button class="botonBuscar">Buscar</button>
+            </div>
+            <div class="contenedorIzquierdo">
+                <img onclick="mostrar()" class="img-fluid" src="./assets/img/bolsa-compras.png" alt="bolsa de compras para el carrito" id="carrito">
+                <div class="carritoCompras">
+                    <p>Mis Compras:</p>
+                    <span><strong id="bolsa">$0</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sombra" id="sombras">
+            <div id="compras" class="pasarelaComprasOculto">
+                <img id="cerrar" src="./assets/img/cerrar-compras.png" alt="" onclick="cerrar()">
+                <div class="comprasCheckOut">
+                    <h4 id="cantidadProductos">Carrito de Compra(0)</h4>
+                    <div class="botonFinalizar">
+                        <div class="infoFinal">
+                            <h6>Total: </h6>
+                            <span><strong id="totalAgregados">$ 0</strong></span>
+                        </div>
+                        <button class="btn btn-success" type="button">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedorDown bg-black">
+            <ul>
+                <a href="./index.html"><li>Inicio</li></a>
+                <select name="categorias" id="categorias" onchange="filtrar(this.value)">
+                    <option value="">Categoría</option>
+                    <option value="fruta">mostrar frutas</option>
+                    <option value="vegetal">mostrar verdura</option>
+                    <option value="3">mostrar todo</option>
+                </select>
+                <a href="#"><li>Vender</li></a>
+                <a href="./nosotros.html"><li>Sobre Nosotros</li></a>
+                <a href="./contacto.html"><li>Contácenos</li></a>
+            </ul>
+            <div class="left">
+                <img class="img-fluid" src="./assets/img/telefono.png" alt="icono para la sección de número telefónico">
+                <p>(+57) 000-000-000</p>
+            </div>
+        </div>
+    </nav>
+    <img src="./assets/img/banner-paginas.png" alt="">
+
+    <div class="container mt-4 mb-4">
+        <div class="row">
+            <div class="col-md-3 d-flex flex-column">
+                <div class="card h-100">
+                    <div class="card-body cartaPanel">
+                        <h2>Navegación</h2>
+                        <div class="opcionNavegacion d-flex flex-row">
+                            <img src="./assets/img/PANEL DE CONTROL.png" alt="icono" width="18px" height="18px">
+                            <h4>Panel de Control</h4>
+                        </div>
+                        <div class="opcionNavegacion d-flex flex-row">
+                            <img src="./assets/img/LOGO2.png" alt="icono" width="18px" height="18px">
+                            <h4>Historial de Ordenes</h4>
+                        </div>
+                        <div class="opcionNavegacion d-flex flex-row">
+                            <img src="./assets/img/CORAZON.png" alt="icono" width="18px" height="18px">
+                            <h4>Lista de Deseos</h4>
+                        </div>
+                        <div class="opcionNavegacion d-flex flex-row">
+                            <img src="./assets/img/CARRITO.png" alt="icono" width="18px" height="18px">
+                            <h4>Carrito de Compras</h4>
+                        </div>
+                        <div class="opcionNavegacion d-flex flex-row">
+                            <img src="./assets/img/AJUSTES.png" alt="icono" width="18px" height="18px">
+                            <h4>Ajustes</h4>
+                        </div>
+                        <div class="opcionNavegacion d-flex flex-row">
+                            <img src="./assets/img/CERRAR SESION.png" alt="icono" width="18px" height="18px">
+                            <h4>Cerrar Sesión</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column align-items-center cartaPerfil">
+                        <img src="./assets/img/FOTO1.png" alt="" >
+                        <h3>Santiago Giraldo</h3>
+                        <p>Cliente</p>
+                        <a href="">Editar Perfil</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column align-items-left cartaDatos">
+                        <h3>DIRECCION DE ENVÍO</h3>
+                        <p>Cl 16 # 55-129, Guayabal, Medellín</p>
+                        <h3>Correo Electrónico</h3>
+                        <p>s.giraldo1315@gmail.com</p>
+                        <span>(+57) 310-000-0000</span>
+                        <a href="">Editar Dirección</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 tabla">
+                <div class="card mt-4">
+                    <h3>Historial de Pedidos</h3>
+                    <table>
+                        <thead>
+                            <tr class="bg-light">
+                                <th>ID</th>
+                                <th>FECHA</th>
+                                <th>TOTAL</th>
+                                <th>ESTATUS</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                                <td>#738</td>
+                                <td>1 Ene, 2024</td>
+                                <td>$135.000 (5productos)</td>
+                                <td>Procesando</td>
+                                <td class="link">Ver Detalles</td>
+                            </tr>
+                            <tr>
+                                <td>#703</td>
+                                <td>15 Feb, 2024</td>
+                                <td>$25.000(1 Producto)</td>
+                                <td>En Camino</td>
+                                <td class="link">Ver Detalles</td>
+                            </tr>
+                            <tr>
+                                <td>#130</td>
+                                <td>30 Dic, 2024</td>
+                                <td>$250.000(4 Productos)</td>
+                                <td>Completado</td>
+                                <td class="link">Ver Detalles</td>
+                            </tr>
+                            <tr>
+                                <td>#561</td>
+                                <td>15 Nov, 2024</td>
+                                <td>$35.000(1 Producto)</td>
+                                <td>Completado</td>
+                                <td class="link">Ver Detalles</td>
+                            </tr>
+                            <tr>
+                                <td>#536</td>
+                                <td>25 Mar, 2024</td>
+                                <td>$578.000(1 Producto)</td>
+                                <td>Completado</td>
+                                <td class="link">Ver Detalles</td>
+                            </tr>
+                            <tr>
+                                <td>#492</td>
+                                <td>15 Feb, 2024</td>
+                                <td>$345.000(7 Productos)</td>
+                                <td>Completado</td>
+                                <td class="link">Ver Detalles</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Banner suscripción-->
+    <div class="container-fluid bg-light d-flex flex-row sesion-suscripcion">
+        <div class="datosSuscripcion">
+
+            <div class="boletin-derecho">
+                <h2>Suscríbete</h2>
+                <p>para obtener ofertas y noticias sobre los cultivos disponibles en la plataforma antes de ser publicadas.</p>
+            </div>
+            <div class="form-suscripcion">
+                <input type="text" placeholder="your e-mail">
+                <button type="submit">Suscríbete</button>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-columnas">
+            <div class="footer-derecho">
+                <img class="img-fluid" src="./assets/img/LOGO MERCADO VERDE.svg" alt="logo mercado verde" width="70px" height="70px">
+                <h2>Mercado<span>Verde</span></h2>
+            </div>
+            <div class="columna-uno">
+                <h3>Mí Cuenta</h3>
+                <ul>
+                    <a href=""><li>Mí Cuenta</li></a>
+                    <a href=""><li>Historial de Órdenes</li></a>
+                    <a href=""><li>Carrito de Compras</li></a>
+                    <a href=""><li>Lista de Deseos</li></a>
+                </ul>
+            </div>
+            <div class="columna-dos">
+                <h3>Ayuda</h3>
+                <ul>
+                    <a href=""><li>Contacto</li></a>
+                    <a href=""><li>Preguntas Frecuentes</li></a>
+                    <a href=""><li>Términos y Condiciones</li></a>
+                    <a href=""><li>Políticas de Provacidad</li></a>
+                </ul>
+            </div>
+            <div class="columna-tres">
+                <h3>Accesibilidad</h3>
+                <ul>
+                    <a href=""><li>Acerca de</li></a>
+                    <a href=""><li>Tienda</li></a>
+                    <a href=""><li>Productos</li></a>
+                    <a href=""><li>Vigilar Órden</li></a>
+                </ul>
+            </div>
+            <div class="columna-cuatro">
+                <h3>Categorías</h3>
+                <ul>
+                    <a href=""><li>Frutas</li></a>
+                    <a href=""><li>Vegetales</li></a>
+                    <a href=""><li>Publicar</li></a>
+                    <a href=""><li>Comprar</li></a>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p>MercadoVerde &copy; 2024. Todos los derechos reservados</p>
+    </footer>
+
+    <!--Panel de Control-->
+
+    <!--Script Principal-->
+    <script src="./assets/js/script.js"></script>
+
+    <!--Script traduccion-->
+    <script src="./assets/js/traduccion.js"></script>
+
+    <!--Script popup-->
+    <script src="./assets/js/app.js"></script>
+
+</body>
+</html>

@@ -4,10 +4,7 @@ function traducir(language){
 }
 
 function peticion(language){
-	let titulo = `<h1 id="titulo">Mercado<span>Verde</span></h1>`;
 
-	
-	
 const url = 'https://google-translate113.p.rapidapi.com/api/v1/translator/html';
 const options = {
 	method: 'POST',
@@ -23,16 +20,15 @@ const options = {
 	})
 };
 
-if(true){
-	try {
-	fetch(url, options).then(response =>{
-		return response.json();
-	}).then(data => {
-		document.body.innerHTML = data.trans;
-	})
-	} catch (error) {}
-	}
+try {
+fetch(url, options).then(response =>{
+    return response.json();
+}).then(data => {
+    document.body.innerHTML = data.trans;
+})
+} catch (error) {}
 }
+
 
 
 if(localStorage.getItem("lenguaje") != null){
