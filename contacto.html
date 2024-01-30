@@ -81,44 +81,42 @@
         <img class="imagenTop" src="./assets/img/banner-paginas.png" alt="imagen banner ubicación">
         
         <!--inicio formulario-->
-        <div class="contenedor-formulario">
-            <div class="formulario">
-                <div class="ubicacion"> 
-                    <img src="./assets/img/PIN UBICACION.png" alt="icono ubicacion">
-                    <p>Outlet de la Moda Guayabal PISO 3</p>
+        
+        <div class="container mt-4 mb-4 containerBox">
+            <div class="row">
+                <div class="col-md-3 contenedorIconos">
+                    <div class="container d-flex flex-column boxIcons">
+                        <img src="./assets/img/PIN UBICACION.png" alt="icono ubicacion" width="50px" height="50px">
+                        <p>Outlet de la Moda Guayabal PISO 3</p>
+                    </div>
+                    <hr>
+                    <div class="container d-flex flex-column boxIcons">
+                        <img src="./assets/img/CORREO.png" alt="icono correo" width="50px" height="50px">
+                        <p>mercadoverde@gmail.com</p>
+                    </div>
+                    <hr>
+                    <div class="container d-flex flex-column boxIcons">
+                        <img src="./assets/img/TELEFONO-UBICACION.png" alt="icono telefono" width="50px" height="50px">
+                        <p>(604) 000-0000</p>
+                        <p>(+57) 000-000-0000</p>
+                    </div>
                 </div>
-                <hr>
-                <div class="correo">
-                    <img src="./assets/img/CORREO.png" alt="icono correo">
-                    <p>mercadoverde@gmail.com</p>
-                </div>
-                <hr>
-                <div class="contacto">
-                    <img src="./assets/img/TELEFONO-UBICACION.png" alt="icono telefono">
-                    <p>(604) 000-0000
-                    (+57) 000-000-0000</p>
+                <div class="col-md-9 contenedorFormulario">
+                    <div class="container">
+                        <div class="formularioDerecho d-flex flex-column">
+                            <h2>Hola nombre del usuario</h2>
+                            <p>Do you fancy saying hi to me or you want to get started with your project and you need my help? Feel free to contact me.</p>
+                        </div>
+                        <div class="d-flex">
+                            <input class="form-control" type="text" id="" placeholder="Nombre">
+                            <input class="form-control" type="text" id="" placeholder="Correo Electrónico">
+                        </div>
+                        <input class="form-control" type="text" id="" placeholder="Título o razón del contacto">
+                        <textarea id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    </div>
+                    <button class="btn btn-success" type="button">Enviar Mensaje</button>
                 </div>
             </div>
-    
-            <div class="formularioDerecho">
-                <div class="contenedorFormulario">
-
-                    <div class="texto">
-                        <h2><strong>Hola Nombre del Usuario!</strong></h2>
-                        <p>Do you fancy saying hi to me or you want to get started with your project and you need my help? Feel free to contact me.</p>
-                    </div>
-                    <div class="inputs">
-                        <input type="text" name="text" id="text1" placeholder="Nombre">
-                        <input type="text" name="text" id="text2" placeholder="Correo Electrónico">
-                    </div>
-                    <div class="inputsBottom">
-                        <input type="text" name="text" id="text3" placeholder="Título o Razón del Contacto">
-                        <textarea id="textArea" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                        <button type="submit">Enviar Mensaje</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
         <!--Sección donde va el mapa con la ubicación-->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31730.685840091573!2d-75.6214834256836!3d6.219383100000022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429e1dab04e05%3A0x5a77c25c8a5faf3a!2sDe%20Moda%20Outlet!5e0!3m2!1ses!2sco!4v1706384282640!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -156,16 +154,16 @@
             <div class="columna-uno">
                 <h3>Mí Cuenta</h3>
                 <ul>
-                    <a href=""><li>Mí Cuenta</li></a>
-                    <a href=""><li>Historial de Órdenes</li></a>
-                    <a href=""><li>Carrito de Compras</li></a>
-                    <a href=""><li>Lista de Deseos</li></a>
+                    <a href="./panel-de-control.html"><li>Mí Cuenta</li></a>
+                    <a href="./historial-compras.html"><li>Historial de Órdenes</li></a>
+                    <a href="./carrito-de-compras.html"><li>Carrito de Compras</li></a>
+                    <a href="./lista-deseos.html"><li>Lista de Deseos</li></a>
                 </ul>
             </div>
             <div class="columna-dos">
                 <h3>Ayuda</h3>
                 <ul>
-                    <a href=""><li>Contacto</li></a>
+                    <a href="./"><li>Contacto</li></a>
                     <a href=""><li>Preguntas Frecuentes</li></a>
                     <a href=""><li>Términos y Condiciones</li></a>
                     <a href=""><li>Políticas de Provacidad</li></a>

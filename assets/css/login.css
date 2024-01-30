@@ -368,7 +368,7 @@ input::placeholder {
     border-radius: 25px;
 }
 .btn:hover{
-    background-image: url('/img/plantas.jpg');
+    background-image: url('./img/plantas.jpg');
     background-size: cover;
     box-shadow: inset;
     color: white;

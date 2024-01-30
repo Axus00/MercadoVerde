@@ -78,6 +78,7 @@
     ],
     "users" : [
         {
+            "status" : "administrador",
             "name" : "Fernando",
             "lastName" : "Toro",
             "email": "fjgt2000@gmail.com",
@@ -86,6 +87,7 @@
             "password": "12345678"
         },
         {
+            "status" : "administrador",
             "name": "Pablo",
             "lastName": "Londoño",
             "email": "juanpablolc414@gmail.com",
@@ -94,12 +96,22 @@
             "password": "patitoloko321"
         },
         {
+            "status" : "administrador",
             "name": "Santiago",
             "lastName": "Giraldo",
             "email": "correo@correo.com",
             "gender": "male",
             "comercial_activity": "natural person",
             "password": "charry"
+        },
+        {
+            "status" : "cliente",
+            "name" : "Fernanda",
+            "lastName" : "Ramirez",
+            "email" : "fernanda22@gmail.com",
+            "gender" : "female",
+            "comercial_activity" : "natural person",
+            "password" : "fernanda123"
         }
     ]
 }

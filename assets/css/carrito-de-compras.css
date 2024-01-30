@@ -484,10 +484,10 @@ p {
 .columna-cuatro {
     margin-top: 20px;
 }
-.columna-uno h4,
-.columna-dos h4,
-.columna-tres h4,
-.columna-cuatro h4{
+.columna-uno h3,
+.columna-dos h3,
+.columna-tres h3,
+.columna-cuatro h3{
     font-family: var(--type-principal);
     font-size: 18px;
     color: var(--clr-ternario);

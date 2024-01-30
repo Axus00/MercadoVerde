@@ -9,25 +9,6 @@ titulo.addEventListener('click', () => {
 }) //Fin de funcionalidad para volver a la web
 
 
-//Se capturan los valores de los inputs
-let email = document.getElementById("email");
-let password = document.getElementById("password");
-
-function submit(event){
-    console.log('Hay un evento de click');
-    
-    if(email.value === "" || password.value === ""){
-        alert("Ingrese datos válidos");
-    }else {
-        window.location.href = "./index.html";
-        alert("ha ingresado correctamente");
-        sessionStorage.setItem("sesionUsuario", email.value);
-    }
-    event.preventDefault();
-};
-
-let button = document.querySelector("button").addEventListener("click", submit);
-
 
 
 let objeto = [];

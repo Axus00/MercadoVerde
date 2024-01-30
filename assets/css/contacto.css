@@ -341,130 +341,57 @@ img{
 }
 
 /*Formulario*/
-.contenedor-formulario{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-}
-.formulario{
-    border-radius: 10px;
+.contenedorIconos{
+    background-color: white;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .25);
+    border-radius: 10px;
+    padding: 20px;
+}
+.boxIcons{
     display: flex;
     flex-direction: column;
-    width: 312px;
-    height: 380px;
-    top: 0;
-    left: 0;
-    margin: 200px;
-    position: relative;
-}
-.formulario img{
-    width: 41px;
-    height: 35px;
-    object-fit: cover;
-    margin-top: 20px;
-}
-.formulario p {
-    color: var(--clr-cuartario);
-    font-family: var(--type-principal);
-    font-weight: 300;
-}
-.ubicacion{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
-.correo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.boxIcons p {
+    color: black;
+    font-family: 'Poppins',sans-serif;
 }
-.contacto{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.contenedorFormulario{
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .25);
+    border-radius: 10px;
+    padding: 20px;
+}
+.contenedorFormulario input {
+    margin: 10px;
+}
+.contenedorFormulario input::placeholder {
+    text-align: left;
+}
+.contenedorFormulario textarea {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 10px;
+}
+.contenedorFormulario button {
+    border: none;
+    border-radius: 25px;
+    background-color: var(--clr-button);
+    cursor: pointer;
+    width: 203px;
+    height: 51px;
+    margin: 10px;
 }
 
-.formularioDerecho{
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .25);
-    border-radius: 10px;
-    height: 400px;
-    width: 700px;
-    top: 0;
-    right: 0;
-    margin: auto;
-    margin-left: -200px;
-}
-.texto {
-    display: flex;
-    flex-direction: column;
-}
-.texto h2{
+.formularioDerecho h2 {
     font-family: var(--type-principal);
-    font-size: 25px;
-    margin: 10px;
 }
-.texto p{
+.formularioDerecho p {
     color: #ccc;
-    font-family: var(--type-principal);
-    font-size: 13px;
-    font-weight: 100;
+    font-family: 'Poppins', sans-serif;
+    width: 486px;
+    text-align: left;
     margin-top: 0;
-    width: 400px;
-    text-align: left;
-    margin: 10px;
-}
-.inputs{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 10px;
-}
-.inputs input{
-    border: 1px solid #ccc;
-    width: 320px;
-    height: 49px;
-}
-.inputs input::placeholder{
-    text-align: left;
-    font-family: 'Poppins', sans-serif;
-    padding-left: 10px;
-}
-.inputsBottom{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    gap: 10px;
-}
-.inputsBottom input{
-    border: 1px solid #ccc;
-    width: 665px;
-    height: 49px;
-}
-.inputsBottom input::placeholder{
-    font-family: 'Poppins', sans-serif;
-    text-align: left;
-}
-.inputsBottom textarea{
-    height: 84px;
-    width: 665px;
-}
-.inputsBottom button {
-    background-color: var(--clr-button);
-    border-radius: 43px;
-    border: none;
-    color: var(--clr-ternario);
-    cursor: pointer;
-    font-family: var(--type-principal);
-    width: 200px;
-    height: 40px;
-    transition: transform .3s ease-in-out;
-}
-.inputsBottom button:hover{
-    background-color: var(--clr-secundario);
-    transform: translateX(5px);
 }
 iframe {
     width: 100vw;

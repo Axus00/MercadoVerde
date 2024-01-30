@@ -99,26 +99,26 @@
                         <form class="card-body d-flex flex-column">
                             <h1>Sign Up</h1>
                             <div class="mb-3 d-flex flex-column">
-                                <input class="form-control" type="text" placeholder="Ingrese su nombre">
+                                <input id="name" class="form-control" type="text" placeholder="Ingrese su nombre">
                             </div>
                             <div class="mb-3 d-flex flex-column">
-                                <input class="form-control" type="text" placeholder="Ingrese su apellido">
+                                <input id="lastName" class="form-control" type="text" placeholder="Ingrese su apellido">
                             </div>
                             <div class="mb-3 d-flex flex-column">
-                                <input class="form-control" type="email" placeholder="Ingrese su email">
+                                <input id="email" class="form-control" type="email" placeholder="Ingrese su email">
                             </div>
                             <select class="form-control mb-3 d-flex flex-column" id="miSelect" name="miSelect">
                                 <option value="" disabled selected>Seleccione su género</option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Femenino">Femenino</option>
+                                <option id="masculino" value="Masculino">Masculino</option>
+                                <option id="femenino" value="Femenino">Femenino</option>
                             </select>
                             <select class="form-control mb-3 d-flex flex-column" id="miSelect2" name="miSelect2">
                                 <option value="" disabled selected>Actividad comercial</option>
-                                <option value="Masculino">Mayorista</option>
-                                <option value="Femenino">Persona natural</option>
+                                <option id="wholesaler" value="Mayorista">Mayorista</option>
+                                <option id="naturalPerson" value="Persona natural">Persona natural</option>
                             </select>
                             <div class="mb-3 d-flex flex-column">
-                                <input class="form-control" type="password" placeholder="Password">
+                                <input id="password" class="form-control" type="password" placeholder="Password">
                             </div>
                             <div class="mb-3 d-flex flex-column">
                                 <input class="form-control" type="password" placeholder="confirme su password">
@@ -127,7 +127,7 @@
                                 <input class="form-check-input" type="checkbox" id="miCheckBox">
                                 <label class="form-check-label" for="miCheckBox">Acepto Términos y Condiciones</label>
                             </div>
-                            <button class="btn btn-success" type="submit">Sign Up</button>
+                            <button id="singUp" onclick="submit()" class="btn btn-success" type="submit">Sign Up</button>
                         </form>
                     </div>
                 </div>
@@ -204,6 +204,9 @@
         <p>MercadoVerde &copy; 2024. Todos los derechos reservados</p>
     </footer>
 
+
+    <!--Registro-->
+    <script src="./assets/js/registro.js"></script>
 
     <!--Script Principal-->
     <script src="./assets/js/script.js"></script>
