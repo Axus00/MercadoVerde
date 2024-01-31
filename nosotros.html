@@ -51,13 +51,25 @@
                     <img onclick="mostrar()" class="img-fluid" src="./assets/img/bolsa-compras.png" alt="bolsa de compras para el carrito" id="carrito">
                     <div class="carritoCompras">
                         <p>Mis Compras:</p>
-                        <span><strong>$57.000</strong></span>
+                        <span><strong id="bolsa">$0</strong></span>
                     </div>
                 </div>
             </div>
     
-            <div id="compras" class="pasarelaComprasOculto">
-                
+            <div class="sombra" id="sombras">
+                <div id="compras" class="pasarelaComprasOculto">
+                    <img id="cerrar" src="./assets/img/cerrar-compras.png" alt="" onclick="cerrar()">
+                    <div class="comprasCheckOut">
+                        <h4 id="cantidadProductos">Carrito de Compra(0)</h4>
+                        <div class="botonFinalizar">
+                            <div class="infoFinal">
+                                <h6>Total: </h6>
+                                <span><strong id="totalAgregados">$ 0</strong></span>
+                            </div>
+                            <button class="btn btn-success" type="button">Finalizar Compra</button>
+                        </div>
+                    </div>
+                </div>
             </div>
     
             <div class="contenedorDown bg-black">

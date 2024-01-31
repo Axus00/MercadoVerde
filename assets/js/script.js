@@ -1,3 +1,26 @@
+//globales
+let objeto = [];
+let suma = 0;
+atributoLocal = 0;
+
+
+if(localStorage.getItem("productos")){
+  let cantidadProductos = document.querySelector(".comprasCheckOut");
+  let objeto = JSON.parse(localStorage.getItem("productos"))
+
+  for (const key in objeto) {
+    let copia = document.createElement("div");
+    copia.classList.add("productosSeleccionados")
+    copia.id = "ProductosCarrito" + ((cantidadProductos.children).length - 1)
+    copia.innerHTML = objeto[key]
+    let precio = copia.querySelector("strong").innerText
+    actualizarCarrito((cantidadProductos.children).length - 1, precio)
+    cantidadProductos.insertBefore(copia, cantidadProductos.children[cantidadProductos.children.length - 1]);
+        
+      
+    }
+  }
+
 //función para cuando le den click al logo de la web
 let titulo = document.getElementById("titulo");
 
@@ -9,9 +32,6 @@ titulo.addEventListener('click', () => {
 }) //Fin de funcionalidad para volver a la web
 
 
-
-
-let objeto = [];
 fetch("http://localhost:3000/products")
 .then((response) => {
   return response.json();
@@ -20,6 +40,7 @@ fetch("http://localhost:3000/products")
   objeto = Array.from(data);
   llenerDescuentos("containerPopulares");
 });
+
 
 
 function filtrar(filtro){
@@ -36,11 +57,10 @@ function mandarCarrito(elemento) {
   );
 }
 
-let suma = 0;
-
 function factoryCarrito(img, titulo, precio) {
 
   let cantidadProductos = document.querySelector(".comprasCheckOut");
+  let productos = cantidadProductos.children;
   actualizarCarrito((cantidadProductos.children).length - 1, precio)
   let copia = document.createElement("div");
   copia.classList.add("productosSeleccionados")
@@ -51,18 +71,36 @@ function factoryCarrito(img, titulo, precio) {
     <div class="productoInformacion">
       <p>${titulo}</p>
       <span>1kg x <strong>${precio}</strong></span>
-      <img src="./img/cerrar.png" alt="boton cerrar" width="32px" height="32px" onclick="borrar((this.parentElement).parentElement)">
+      <img src="./assets/img/cerrar.png" alt="boton cerrar" width="32px" height="32px" onclick="borrar((this.parentElement).parentElement)">
     </div>`;
-
-  cantidadProductos.insertBefore(copia, cantidadProductos.children[cantidadProductos.children.length - 1]);
+    cantidadProductos.insertBefore(copia, cantidadProductos.children[cantidadProductos.children.length - 1]);
+    let local = {}
+        for (let i = 1; i < productos.length - 1; i++) {
+          local["hijo"+i] = productos[i].innerHTML
+          localStorage.setItem("productos", JSON.stringify(local))
+          
+        }
 }
 
 function borrar(objeto) {
   let precio = objeto.querySelector("strong").innerText
   objeto.remove()
+  let local = {}
   
   let cantidadProductos = document.querySelector(".comprasCheckOut");
   actualizarCarrito((cantidadProductos.children).length - 2, precio, true)
+    let productos = cantidadProductos.children;
+  
+    if(productos.length == 2){
+      localStorage.removeItem("productos")
+    }
+    else{
+  for (let i = 1; i < productos.length -1; i++) {
+    local["hijo"+i] = productos[i].innerHTML
+    
+  }
+  localStorage.setItem("productos", JSON.stringify(local))
+}
 }
 
 function actualizarCarrito(cantidadActual, precio, control){
@@ -70,7 +108,8 @@ function actualizarCarrito(cantidadActual, precio, control){
   const total = document.getElementById("totalAgregados"); 
   const precioCarrito = document.getElementById("bolsa");
 
-  cantidad.innerText = `Carrito de Compra(${cantidadActual})`
+  cantidad.innerText = cantidad.innerText.replace(/[0-9]/g,cantidadActual)
+  precio = precio.replace(",", ".")
 
   if(control){
     precio = String(precio)
@@ -86,7 +125,7 @@ function actualizarCarrito(cantidadActual, precio, control){
   precioCarrito.innerText = `$ ${montoFormateado}`
 
 }
-
+{
 //Evento para las cartas de prodctos en descuento
 objeto = []
     fetch("http://localhost:3000/products")
@@ -97,7 +136,7 @@ objeto = []
         objeto = Array.from(data);
         llenerDescuentos("containerDescuento");
       });
-
+}
       
 function llenerDescuentos(lugar){
 

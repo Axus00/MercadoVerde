@@ -1,12 +1,8 @@
 //Se obtienen los valores para el registro}
 const URL = "http://localhost:3000/users";
-
-//se capturan los valores de los inputs
 let nombre = document.getElementById("name");
 let lastName = document.getElementById("lastName");
 let email = document.getElementById("email");
-let address = document.getElementById("address");
-let phone = document.getElementById("phone");
 let select = document.getElementById("miSelect");
 let masculino = document.getElementById("masculino");
 let femenino = document.getElementById("femenino");
@@ -19,7 +15,7 @@ let button = document.querySelector("#singUp");
 
 button.addEventListener('click', submit);
 
-function submit(event) {
+function submit() {
 
     let registerUser = {
         status: "cliente",
@@ -28,8 +24,7 @@ function submit(event) {
         email: email.value,
         gender: select.value,
         comercial_activity: select2.value,
-        password: password.value,
-        image: ".././img/userBlank.png"
+        password: password.value
     };
     
     fetch(URL, {
@@ -45,6 +40,4 @@ function submit(event) {
     .then(data => {
         console.log(data);
     })
-
-    event.preventDefault();
 }
