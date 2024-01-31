@@ -1,117 +1,132 @@
 {
-    "products": [
-        {  
-        "name":"Manzana Verde - Unidad",
-        "tipo": "fruta",
-        "src": "./assets/img/Manzana.png",
-        "precio": "$2.100"
-        },
-
-        {
-        "name":"Naranja",
-        "tipo": "fruta",
-        "src": "./assets/img/Naranja.png",
-        "precio": "$1.495"
-        }, 
-        {
-            "name":"Col china x 2000gr",
-            "tipo": "vegetal",
-            "src": "./assets/img/Col China.png",
-            "precio": "$10.956"
-        },
-        {
-            "name":"Lechuga x 500gr",
-            "tipo": "vegetal",
-            "src": "./assets/img/Lechuga.png",
-            "precio": "$3.090"
-        },
-        {
-            "name":"Berenjena",
-            "tipo": "vegetal",
-            "src": "./assets/img/Berenjena.png",
-            "precio": "$2.820"
-        },
-        {
-            "name":"Papa Capira",
-            "tipo": "vegetal",
-            "src": "./assets/img/PAPA.png",
-            "precio": "$1.600"
-        },
-        {
-            "name":"Mazorca x 500gr",
-            "tipo": "vegetal",
-            "src": "./assets/img/Mazorca.png",
-            "precio": "$4.145"
-        },
-        {
-            "name":"Coliflor Fresca",
-            "tipo": "fruta",
-            "src": "./assets/img/Coliflor.png",
-            "precio": "$5.640"
-        },
-        {
-            "name":"Pimentón Verde",
-            "tipo": "fruta",
-            "src": "./assets/img/Pimenton Verde.png",
-            "precio": "$3.645"
-        },
-        {
-            "name":"Ají Jalapeño Verde x 500gr",
-            "tipo": "fruta",
-            "src": "./assets/img/ají verde.png",
-            "precio": "$6.820"
-        },
-        {
-        "name":"Mango Tommy",
-        "tipo": "fruta",
-        "src": "./assets/img/Mango.png",
-        "precio": "$2.990"
-        }
-    ],
-    "productosDescuento":[
-        {
-            "name":"Mango Tommy",
-            "tipo": "fruta",
-            "src": "./assets/img/Mango.png",
-            "precio": "$2.990"
-            }
-    ],
-    "users" : [
-        {
-            "status" : "administrador",
-            "name" : "Fernando",
-            "lastName" : "Toro",
-            "email": "fjgt2000@gmail.com",
-            "gender": "male",
-            "comercial_activity": "natural person",
-            "password": "12345678"
-        },
-        {
-            "status" : "administrador",
-            "name": "Pablo",
-            "lastName": "Londoño",
-            "email": "juanpablolc414@gmail.com",
-            "gender": "male",
-            "comercial_activity": "natural person",
-            "password": "patitoloko321"
-        },
-        {
-            "status" : "administrador",
-            "name": "Santiago",
-            "lastName": "Giraldo",
-            "email": "correo@correo.com",
-            "gender": "male",
-            "comercial_activity": "natural person",
-            "password": "charry"
-        },
-        {
-            "status" : "cliente",
-            "name" : "Fernanda",
-            "lastName" : "Ramirez",
-            "email" : "fernanda22@gmail.com",
-            "gender" : "female",
-            "comercial_activity" : "natural person",
-            "password" : "fernanda123"
-        }
-    ]
+  "products": [
+    {
+      "name": "Manzana Verde - Unidad",
+      "tipo": "fruta",
+      "src": "./assets/img/Manzana.png",
+      "precio": "$2.100",
+      "id": "b9db"
+    },
+    {
+      "name": "Naranja",
+      "tipo": "fruta",
+      "src": "./assets/img/Naranja.png",
+      "precio": "$1.495",
+      "id": "554e"
+    },
+    {
+      "name": "Col china x 2000gr",
+      "tipo": "vegetal",
+      "src": "./assets/img/Col China.png",
+      "precio": "$10.956",
+      "id": "cc54"
+    },
+    {
+      "name": "Lechuga x 500gr",
+      "tipo": "vegetal",
+      "src": "./assets/img/Lechuga.png",
+      "precio": "$3.090",
+      "id": "1fe2"
+    },
+    {
+      "name": "Berenjena",
+      "tipo": "vegetal",
+      "src": "./assets/img/Berenjena.png",
+      "precio": "$2.820",
+      "id": "52f2"
+    },
+    {
+      "name": "Papa Capira",
+      "tipo": "vegetal",
+      "src": "./assets/img/PAPA.png",
+      "precio": "$1.600",
+      "id": "6093"
+    },
+    {
+      "name": "Mazorca x 500gr",
+      "tipo": "vegetal",
+      "src": "./assets/img/Mazorca.png",
+      "precio": "$4.145",
+      "id": "4bb8"
+    },
+    {
+      "name": "Coliflor Fresca",
+      "tipo": "fruta",
+      "src": "./assets/img/Coliflor.png",
+      "precio": "$5.640",
+      "id": "7db4"
+    },
+    {
+      "name": "Pimentón Verde",
+      "tipo": "fruta",
+      "src": "./assets/img/Pimenton Verde.png",
+      "precio": "$3.645",
+      "id": "0207"
+    },
+    {
+      "name": "Ají Jalapeño Verde x 500gr",
+      "tipo": "fruta",
+      "src": "./assets/img/ají verde.png",
+      "precio": "$6.820",
+      "id": "9fb6"
+    },
+    {
+      "name": "Mango Tommy",
+      "tipo": "fruta",
+      "src": "./assets/img/Mango.png",
+      "precio": "$2.990",
+      "id": "4115"
+    }
+  ],
+  "productosDescuento": [
+    {
+      "name": "Mango Tommy",
+      "tipo": "fruta",
+      "src": "./assets/img/Mango.png",
+      "precio": "$2.990",
+      "id": "dead"
+    }
+  ],
+  "users": [
+    {
+      "status": "administrador",
+      "name": "Fernando",
+      "lastName": "Toro",
+      "email": "fjgt2000@gmail.com",
+      "gender": "male",
+      "comercial_activity": "natural person",
+      "password": "12345678",
+      "id": "53fd"
+    },
+    {
+      "status": "administrador",
+      "name": "Pablo",
+      "lastName": "Londoño",
+      "email": "juanpablolc414@gmail.com",
+      "gender": "male",
+      "comercial_activity": "natural person",
+      "password": "patitoloko321",
+      "id": "6a8e"
+    },
+    {
+      "status": "administrador",
+      "name": "Santiago",
+      "lastName": "Giraldo",
+      "email": "correo@correo.com",
+      "gender": "male",
+      "comercial_activity": "natural person",
+      "password": "charry",
+      "id": "89cc"
+    },
+    {
+      "status": "cliente",
+      "name": "Fernanda",
+      "lastName": "Ramirez",
+      "email": "fernanda22@gmail.com",
+      "gender": "female",
+      "comercial_activity": "natural person",
+      "password": "fernanda123",
+      "id": "8e25"
+    }
+  ]
 }

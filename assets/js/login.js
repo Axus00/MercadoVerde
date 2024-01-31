@@ -17,7 +17,8 @@ function submit(){
 
       if(user){
         window.location.href = ".././index.html"
-        sessionStorage.setItem("sesion", user.status)
+        let saveDates = {};
+        sessionStorage.setItem("sesion",  user.status, JSON.stringify(saveDates))
       }else {
         alert("Diligencie todos los campos")
       }
