@@ -79,7 +79,7 @@ function App() {
 
 ## Support
 
-For support, email fake@fake.com or join our Slack channel.
+For support, email mercadoverde@gmail.com or join our Slack channel.
 
 
 ## Running Tests
