@@ -29,3 +29,20 @@ function llenar(){
     <span>${registro.tel}</span>
     <a href="">Editar Dirección</a>`
 }
+
+//Función evento para cerrar sesión
+//se llaman los eventos de los botones
+const cerrar = document.getElementById("close");
+
+
+cerrar.addEventListener("click", closeSession)
+
+function closeSession(){
+    console.log("evento")
+
+
+    sessionStorage.clear()
+    window.location.href = ".././login.html";
+}
+//Fin evento para el cierre de sesión
+
