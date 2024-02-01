@@ -326,6 +326,10 @@ input::placeholder {
     cursor: pointer;
     transition: .3s ease;
 }
+.opcionNavegacion a {
+    color: var(--clr-cuartario);
+    text-decoration: none;
+}
 .opcionNavegacion:hover {
     background-color: #84D187;
 }
