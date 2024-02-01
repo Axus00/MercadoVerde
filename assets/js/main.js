@@ -1,12 +1,11 @@
-const searchContainer = document.querySelector('#caja');
-const inputSearch = document.getElementById("search");
-const boxSuggestions = document.querySelector('.suggestions');
 
+const inputSearch = document.getElementById("search");
+const searchContainer = document.querySelector('#caja');
+const boxSuggestions = document.querySelector('.suggestions');
 const button = document.getElementById('enlace');
 
-
-
 inputSearch.onkeyup = (event) => {
+    
     searchContainer.classList.add('active');
     searchContainer.classList.add("search-box")
     let userData = event.target.value

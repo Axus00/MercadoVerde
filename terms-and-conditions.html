@@ -18,7 +18,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="./assets/css/terms-and-conditions.css">
 </head>
-<body >
+<body>
 
     <div class="container d-flex flex-column min-vh-100">
         <nav class="navbar-light fixed-top d-flex flex-column">   
@@ -39,11 +39,15 @@
         </nav>
         <div class="container policies">
             <div class="row">
-                <div class="container col-md-11">
-                    <input id="search" type="search" placeholder="Buscar">
+                <div class="container col-md-11" >
+                    <div id="caja">
+                        <input id="search" type="search" placeholder="Buscar">
+                        <ul class="suggestions" id="sugerencias">
+                        </ul>
+                    </div>
                 </div>
                 <div class="container col-md-1">
-                    <button class="btn btn-success" type="button">Buscar</button>
+                    <a href="" id="enlace"><button id="searchButton" class="btn btn-success" type="button">Buscar</button></a>
                 </div>
                 
                 <h2>Términos y Condiciones</h2>
@@ -136,10 +140,11 @@
     </footer>
 
     <!--Script Principal-->
-    <script src="./assets/js/script.js"></script>
+<!--     <script src="./assets/js/script.js"></script> -->
 
     <!--script para la búsqueda-->
-    <script src="./assets/js/terms-and-conditions.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/suggestions.js"></script>
 
     <!--Script traduccion-->
     <script src="./assets/js/traduccion.js"></script>

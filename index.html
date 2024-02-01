@@ -44,8 +44,12 @@
                     <h1 id="titulo">Mercado<span>Verde</span></h1>
                 </div>
                 <div class="contenedorMedio">
-                    <input type="text" placeholder="Search Products">
-                    <button class="botonBuscar">Buscar</button>
+                    <div id="caja">
+                        <a href="" id="enlace"><button id="searchButton" class="btn btn-success" type="button">Buscar</button></a>
+                        <input id="search" type="search" placeholder="Buscar">
+                        <ul class="suggestions" id="sugerencias">
+                        </ul>
+                    </div>
                 </div>
                 <div class="contenedorIzquierdo">
                     <img onclick="mostrar()" class="img-fluid" src="./assets/img/bolsa-compras.png" alt="bolsa de compras para el carrito" id="carrito">
@@ -318,6 +322,11 @@
         <hr>
         <p>MercadoVerde &copy; 2024. Todos los derechos reservados</p>
     </footer>
+
+        <!--script para la búsqueda-->
+        <script src="./assets/js/main.js"></script>
+        <script src="./assets/js/suggestions.js"></script>
+    
 
     <!--Script Principal-->
     <script src="./assets/js/script.js"></script>
