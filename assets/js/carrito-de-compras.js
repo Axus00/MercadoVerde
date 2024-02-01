@@ -19,6 +19,7 @@ function llenar(data){
         suma1 += subTotal;
         var montoFormateado = subTotal.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         let tr = document.createElement("tr")
+        tr.id = data.id
         tr.innerHTML = `
         <td><img src="${data.src}" alt="pimentón verde" width="100px" height="100px"></td>
         <td>${data.precio}</td>
@@ -40,7 +41,30 @@ function llenar(data){
                             </tr>
                             <tr>
                                 <td>Total:</td>
-                                <td>$${montoFormateado1}</td>
+                                <td id="totalCompra">$${montoFormateado1}</td>
                             </tr>`
 }
 
+function mandardb(){
+    let idsproductos = insertarProductos.children
+    let registro = {
+        date: "01/FEB/2024",
+        total : document.getElementById("totalCompra").innerText,
+        state : "Proceso",
+        id_usuario : sessionStorage.getItem("id"),
+        productos : []
+    }
+    for(let i = 0; i < idsproductos.length; i++){
+        registro.productos.push(idsproductos[i].id)
+    }
+
+    console.log(registro)
+
+        fetch("http://localhost:3000/ordens_history",{
+            method : "POST",
+            headers : {
+                "content-type" : "application/json"
+            },
+            body : JSON.stringify(registro)
+        })
+}

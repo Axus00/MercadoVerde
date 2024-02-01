@@ -2,47 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400&display=swap');
 
 
-/*Estilos para la barra de buscar*/
-.search-box {
-    width: 90%;
-    background-color: var(--clr-button);
-    border-radius: 5px;
-    position: relative;
-    color: #f5f6f4;
-    box-shadow: 0 1px 5px 3px rgba(0, 0, 0, .12);
-}
-
-.suggestions {
-    overflow-y: auto;
-    max-height: 100px;
-    opacity: 0;
-    pointer-events: none;
-    padding: 0;
-}
-
-.search-box.active .suggestions {
-    opacity: 1;
-    pointer-events: auto;
-    padding: 9px 7px;
-}
-
-.search-box.active .suggestions li {
-    display: block;
-}
-
-.suggestions li {
-    color: black;
-    list-style: none;
-    width: 100%;
-    padding: 7px 12px;
-    border-radius: 5px;
-    display: none;
-}
-
-.suggestions li:hover {
-    background-color: var(--clr-secundario);
-}
-
 :root {
     /*Var de la paleta de colores que se usaría*/
     --clr-principal: #29fe1d;
