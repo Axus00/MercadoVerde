@@ -1,7 +1,7 @@
 
-<div align="center"># MercadoVerde</div>
+# MercadoVerde
 
-<div align="center">MercadoVerde está pensado para eliminar la intermediación entre el campesino o agricultor con el cliente final, con el fin de mejorar los ingresos de los agricultores, mejorando su calidad de vida y consiguiendo precios justos.</div>
+MercadoVerde está pensado para eliminar la intermediación entre el campesino o agricultor con el cliente final, con el fin de mejorar los ingresos de los agricultores, mejorando su calidad de vida y consiguiendo precios justos.
 
 
 ![LOGO-MERCADO-VERDE.png](https://i.postimg.cc/GtjkBf2r/LOGO-MERCADO-VERDE.png)
