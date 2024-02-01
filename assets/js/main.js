@@ -1,5 +1,5 @@
-const searchContainer = document.querySelector('.search-box');
-const inputSearch = searchContainer.querySelector('input');
+const searchContainer = document.querySelector('#caja');
+const inputSearch = document.getElementById("search");
 const boxSuggestions = document.querySelector('.suggestions');
 
 const button = document.getElementById('enlace');
@@ -7,6 +7,8 @@ const button = document.getElementById('enlace');
 
 
 inputSearch.onkeyup = (event) => {
+    searchContainer.classList.add('active');
+    searchContainer.classList.add("search-box")
     let userData = event.target.value
     let emptyArray = [];
 
@@ -31,12 +33,6 @@ inputSearch.onkeyup = (event) => {
             li.setAttribute('onclick', 'select(this)')
         })
 
-    } else {
-
-        if(userData == ""){
-            searchContainer.classList.remove('active')
-            boxSuggestions.style.display = "none"
-        }
     }
 
     
@@ -52,17 +48,18 @@ function select(element) {
     } else if (selectUserData.toLocaleLowerCase() == "frutas"){
         button.href = `https://www.google.com/search?q=${inputSearch.value}`
     } else if (selectUserData.toLocaleLowerCase() == "tienda") {
-        button.href = `https://www.google.com/search?q=${inputSearch.value}`
+        button.href = `http://127.0.0.1:5500/index.html`
     } else if (selectUserData.toLocaleLowerCase() == "políticas de privacidad") {
         button.href = `https://www.google.com/search?q=${inputSearch.value}`
     } else if (selectUserData.toLocaleLowerCase() == "términos y condiciones") {
-        button.href = `https://www.google.com/search?q=${inputSearch.value}`
+        button.href = `http://127.0.0.1:5500/terms-and-conditions.html`
     } else if (selectUserData.toLocaleLowerCase() == "carrito de compras") {
         button.href = `https://www.google.com/search?q=${inputSearch.value}`
     }
     
     
     searchContainer.classList.remove('active');
+    searchContainer.classList.remove("search-box")
 }
 
 const mostrarSugerencias = list => {
