@@ -19,7 +19,7 @@
         <!--CSS-->
         <link rel="stylesheet" href="./assets/css/carrito-de-compras.css">
     </head>
-<body>
+<body onload="cargar()">
     
     <!--Nav-->
     <nav class=" navbar-light bg-light d-flex flex-column">   
@@ -108,17 +108,6 @@
                             </tr>
                         </thead>
                         <tbody id="tbody">
-                            <tr>
-                                <td><img src="./assets/img/Pimenton Verde.png" alt="pimentón verde" width="100px" height="100px"></td>
-                                <td>$3.645</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td><img src="./assets/img/Chile Rojo.png" alt="chile rojo"></td>
-                                <td>$15.000</td>
-                                <td>5</td>
-                                <td>$75.000</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -131,23 +120,12 @@
                                 <h3>Total a Pagar</h3>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Subtotal:</td>
-                                <td>$93.225</td>
-                            </tr>
-                            <tr>
-                                <td>Shipping:</td>
-                                <td>$25.000</td>
-                            </tr>
-                            <tr>
-                                <td>Total:</td>
-                                <td>$118.000</td>
-                            </tr>
+                        <tbody id="pagos">
+                            
                         </tbody>
                     </table>
                 </div>                
-                <button class="btn btn-success mt-4 botonCompras" type="button">FINALIZAR LA COMPRA</button>
+                <button class="btn btn-success mt-4 botonCompras" type="button" onclick="llenar()">FINALIZAR LA COMPRA</button>
             </div>
         </div>
         <div class="col-md-8" >
@@ -229,7 +207,8 @@
         <p>MercadoVerde &copy; 2024. Todos los derechos reservados</p>
     </footer>
 
-    <!--Panel de Control-->
+    <!--carrito de compras-->
+    <script src="./assets/js/carrito-de-compras.js"></script>
 
     <!--Script Principal-->
     <script src="./assets/js/script.js"></script>

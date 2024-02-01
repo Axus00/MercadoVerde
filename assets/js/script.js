@@ -3,15 +3,18 @@ let objeto = [];
 let suma = 0;
 atributoLocal = 0;
 
-
 if(localStorage.getItem("productos")){
   let cantidadProductos = document.querySelector(".comprasCheckOut");
   let objeto = JSON.parse(localStorage.getItem("productos"))
 
   for (const key in objeto) {
     let copia = document.createElement("div");
+    let id = objeto[key].substring(objeto[key].indexOf("id=")+3)
+    console.log(id)
+    objeto[key] = objeto[key].replace("id="+id,"")
+    console.log(objeto[key])
     copia.classList.add("productosSeleccionados")
-    copia.id = "ProductosCarrito" + ((cantidadProductos.children).length - 1)
+    copia.id = id
     copia.innerHTML = objeto[key]
     let precio = copia.querySelector("strong").innerText
     actualizarCarrito((cantidadProductos.children).length - 1, precio)
@@ -53,18 +56,19 @@ function mandarCarrito(elemento) {
   factoryCarrito(
     elemento.children[0].src,
     elemento.children[1].innerText,
-    elemento.children[2].innerText
+    elemento.children[2].innerText,
+    elemento.id
   );
 }
 
-function factoryCarrito(img, titulo, precio) {
+function factoryCarrito(img, titulo, precio, id) {
 
   let cantidadProductos = document.querySelector(".comprasCheckOut");
   let productos = cantidadProductos.children;
   actualizarCarrito((cantidadProductos.children).length - 1, precio)
   let copia = document.createElement("div");
   copia.classList.add("productosSeleccionados")
-  copia.id = "ProductosCarrito" + ((cantidadProductos.children).length - 1)
+  copia.id = id
 
   copia.innerHTML = `
     <img src="${img}" alt="">
@@ -76,7 +80,7 @@ function factoryCarrito(img, titulo, precio) {
     cantidadProductos.insertBefore(copia, cantidadProductos.children[cantidadProductos.children.length - 1]);
     let local = {}
         for (let i = 1; i < productos.length - 1; i++) {
-          local["hijo"+i] = productos[i].innerHTML
+          local["hijo"+i] = productos[i].innerHTML+"id="+productos[i].id
           localStorage.setItem("productos", JSON.stringify(local))
           
         }
@@ -96,7 +100,7 @@ function borrar(objeto) {
     }
     else{
   for (let i = 1; i < productos.length -1; i++) {
-    local["hijo"+i] = productos[i].innerHTML
+    local["hijo"+i] = productos[i].innerHTML+"id="+productos[i].id
     
   }
   localStorage.setItem("productos", JSON.stringify(local))
@@ -159,6 +163,7 @@ for(let i = 0; i < 12; i++){
         //elemento card-body
         const cardBodyDescuento = document.createElement('div');
         cardBodyDescuento.classList.add("card-body");
+        cardBodyDescuento.id = objeto[cont].id
         
         
         //img
