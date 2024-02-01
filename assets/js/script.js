@@ -10,9 +10,7 @@ if(localStorage.getItem("productos")){
   for (const key in objeto) {
     let copia = document.createElement("div");
     let id = objeto[key].substring(objeto[key].indexOf("id=")+3)
-    console.log(id)
     objeto[key] = objeto[key].replace("id="+id,"")
-    console.log(objeto[key])
     copia.classList.add("productosSeleccionados")
     copia.id = id
     copia.innerHTML = objeto[key]
@@ -202,7 +200,7 @@ for(let i = 0; i < 12; i++){
 
         cont++;
 
-    }
+      }
 }
 }
 

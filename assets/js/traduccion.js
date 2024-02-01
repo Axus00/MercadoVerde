@@ -30,7 +30,10 @@ fetch(url, options).then(response =>{
 }
 
 
-
+function cambio(){
 if(localStorage.getItem("lenguaje") != null){
     peticion(localStorage.getItem("lenguaje"))
 }
+}
+
+setTimeout(cambio,580)
