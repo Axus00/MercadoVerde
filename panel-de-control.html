@@ -120,8 +120,10 @@
                             <h4>Ajustes</h4>
                         </div>
                         <div class="opcionNavegacion d-flex flex-row">
-                            <img src="./assets/img/CERRAR SESION.png" alt="icono" width="18px" height="18px">
-                            <h4>Cerrar Sesión</h4>
+                            <a class="d-flex " id="close" onclick="closeSession()">
+                                <img src="./assets/img/CERRAR SESION.png" alt="icono" width="18px" height="18px">
+                                <h4>Cerrar Sesión</h4>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -165,6 +167,7 @@
                             </tr>
                         </thead>
                         <tbody id="tbody">
+                            
                         </tbody>
                     </table>
                 </div>
@@ -240,11 +243,12 @@
         <p>MercadoVerde &copy; 2024. Todos los derechos reservados</p>
     </footer>
 
+
+    <!--Script historial de compras-->
+    <script src="./assets/js/historial-compras.js"></script>
+
     <!--Panel de Control-->
     <script src="./assets/js/panel.js"></script>
-
-    <!--Historial de compras-->
-    <script src="./assets/js/historial-compras.js"></script>
 
     <!--Script Principal-->
     <script src="./assets/js/script.js"></script>
