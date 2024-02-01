@@ -19,7 +19,6 @@ function submit(){
         sessionStorage.setItem("id", user.id)
         console.log(user)
         window.location.href = ".././panel-de-control.html"
-        sessionStorage.setItem("sesion", user.status)
       }else {
         alert("Diligencie todos los campos")
       }
