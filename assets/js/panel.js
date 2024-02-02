@@ -30,6 +30,15 @@ function llenar(){
     <a href="">Editar Dirección</a>`
 }
 
+
+//Se verifica el inicio de sesión
+const sesionGuardada = sessionStorage.getItem("id")
+
+if(!sesionGuardada){
+    window.location.href = ".././index.html";
+}
+
+
 //Función evento para cerrar sesión
 //se llaman los eventos de los botones
 const cerrar = document.getElementById("close");
@@ -45,4 +54,19 @@ function closeSession(){
     window.location.href = ".././login.html";
 }
 //Fin evento para el cierre de sesión
+
+
+//evento para la suscripción
+const suscripcion = document.getElementById("suscribe");
+
+suscripcion.addEventListener("click", function(event){
+    console.log("Te has suscrito");
+
+    const accion = event.target
+    
+    if(accion){
+        alert("Gracias por suscribirte a nuestro newslatter")
+        location.href = "https://www.gmail.com";
+    }
+});
 
