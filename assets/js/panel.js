@@ -6,7 +6,7 @@ console.log(fecha.getMonth()+1)
 let informacion0 = document.getElementById("informacion0");
 let informacion1 = document.getElementById("informacion1");
 let registro = {}
-let id = sessionStorage.getItem("id")
+let id = localStorage.getItem("id")
 
 fetch("http://localhost:3000/users/"+id)
 .then(response => { return response.json()})
@@ -32,7 +32,7 @@ function llenar(){
 
 
 //Se verifica el inicio de sesión
-const sesionGuardada = sessionStorage.getItem("id")
+const sesionGuardada = localStorage.getItem("id")
 
 if(!sesionGuardada){
     window.location.href = ".././index.html";
@@ -50,7 +50,7 @@ function closeSession(){
     console.log("evento")
 
 
-    sessionStorage.clear()
+    localStorage.clear()
     window.location.href = ".././login.html";
 }
 //Fin evento para el cierre de sesión
