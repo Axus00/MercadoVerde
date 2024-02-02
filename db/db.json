@@ -96,6 +96,9 @@
       "gender": "male",
       "comercial_activity": "natural person",
       "password": "12345678",
+      "img": "./assets/img/perfil-de-usuario.webp",
+      "tel": "3024559976",
+      "adress": "cra 65 cc # 32 A 06",
       "id": "13b4"
     },
     {
@@ -119,6 +122,9 @@
       "gender": "male",
       "comercial_activity": "natural person",
       "password": "charry",
+      "img": "./assets/img/santiago.png",
+      "tel": "3106506330",
+      "adress": "cll 56 # 92-94",
       "id": "978c"
     },
     {
