@@ -1,0 +1,283 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.container,
+.container-fluid,
+.row {
+    max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    nav.navbar-light,
+    nav .navbar-light,
+    nav.fixed-top,
+    .fixed-top {
+        position: static !important;
+    }
+
+    .banner {
+        height: auto !important;
+        padding: 8px 12px;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .banner-right {
+        display: none !important;
+    }
+
+    .banner-left {
+        margin-top: 0 !important;
+        align-items: center !important;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .bannerPrincipal {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 8px 12px;
+    }
+
+    .contenedorDerecho,
+    .contenedorMedio,
+    .contenedorIzquierdo {
+        margin: 0 !important;
+    }
+
+    .contenedorDerecho {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedorDerecho h1 {
+        font-size: clamp(1.4rem, 4vw, 2rem);
+    }
+
+    .contenedorMedio {
+        width: 100%;
+        display: flex !important;
+        justify-content: center;
+    }
+
+    #caja {
+        width: min(100%, 560px);
+    }
+
+    .contenedorMedio input,
+    #search {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .contenedorIzquierdo {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .contenedorDown {
+        height: auto !important;
+        padding: 10px 12px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contenedorDown ul {
+        width: 100%;
+        margin: 0 !important;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 14px;
+    }
+
+    .contenedorDown li,
+    .contenedorDown select,
+    .contenedorDown a {
+        margin: 0 !important;
+    }
+
+    .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .pasarelaComprasOculto {
+        width: min(100vw, 400px) !important;
+    }
+
+    .comprasCheckOut {
+        margin: 20px !important;
+        height: auto !important;
+    }
+
+    .botonFinalizar {
+        width: 100% !important;
+    }
+
+    .botonFinalizar button {
+        position: static !important;
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .infoFinal {
+        position: static !important;
+        margin: 16px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto !important;
+    }
+
+    .container.d-flex.flex-row,
+    .container-fluid.d-flex.flex-row,
+    .container-fluid.bg-light.d-flex.flex-row {
+        flex-direction: column !important;
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .banner1,
+    .card-info,
+    .col-8,
+    .col-4,
+    .carta-column1 {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .carta-column1 {
+        position: static !important;
+        top: auto !important;
+    }
+
+    .cartas-principales {
+        margin-top: 1rem !important;
+        margin-right: 0 !important;
+    }
+
+    .carta-uno {
+        height: auto !important;
+        min-height: 360px;
+    }
+
+    .informacion {
+        margin: 40px 20px !important;
+    }
+
+    .informacion h2 {
+        width: auto !important;
+        height: auto !important;
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    .informacion-usuario {
+        height: auto !important;
+        padding: 0 12px;
+    }
+
+    .informacion-usuario-box {
+        width: 100% !important;
+        grid-template-columns: 1fr !important;
+        height: auto !important;
+        padding: 16px;
+        margin: 0 !important;
+    }
+
+    .contenedor,
+    .contenedorDescuento {
+        margin: 24px 12px !important;
+    }
+
+    .container-productos {
+        flex-direction: column !important;
+        gap: 8px;
+    }
+
+    .banner-informativo img {
+        height: auto !important;
+        min-height: 300px;
+    }
+
+    .texto {
+        position: static !important;
+        transform: none !important;
+        width: 100% !important;
+        padding: 16px;
+    }
+
+    .texto h2 {
+        width: auto !important;
+        margin-left: 0 !important;
+    }
+
+    .texto button {
+        margin-left: 0 !important;
+    }
+
+    .contenedor-box-contadores {
+        position: static !important;
+        transform: none !important;
+        margin: 0 !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 16px;
+    }
+
+    .sesion-suscripcion {
+        height: auto !important;
+        padding: 16px 12px;
+    }
+
+    .datosSuscripcion {
+        flex-direction: column !important;
+        gap: 16px;
+    }
+
+    .boletin-derecho,
+    .boletin-derecho p,
+    .form-suscripcion,
+    .form-suscripcion input {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .form-suscripcion {
+        position: relative;
+    }
+
+    .form-suscripcion button {
+        position: static !important;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .footer-columnas {
+        grid-template-columns: 1fr !important;
+    }
+
+    .footer-derecho {
+        flex-direction: column;
+    }
+}
