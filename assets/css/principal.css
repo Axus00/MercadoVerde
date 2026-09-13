@@ -103,7 +103,7 @@ h1 {
 }
 .productosSeleccionados{
     display: flex;
-    width: 120vw;
+    width: 100%;
     height: 100px;
     object-fit: cover;
 }
@@ -130,7 +130,7 @@ h1 {
     left: 280px;
 }
 .botonFinalizar{
-    width: 100vw;
+    width: 100%;
     height: 100%;
 }
 .botonFinalizar button{
@@ -535,7 +535,7 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 200px;
 }
 .informacion-usuario-box{
@@ -941,104 +941,4 @@ p {
 hr {
     margin: 20px 10%;
     border-bottom: 1px solid #ccc;
-}
-
-@media (max-width: 768px) {
-    .footer-columnas{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .columna-uno,
-    .columna-dos,
-    .columna-tres,
-    .columna-cuatro{
-        margin-top: 10px;
-    }
-
-    hr{
-        margin: 20px 10%;
-    }
-}
-/*Media Querys*/
-/*Nav*/
-@media screen and (max-width: 768px) {
-    .banner-right{
-        display: none;
-    }
-    .banner-left{
-        margin-right: 500px;
-    }
-    /*contenedor derecho*/
-    .contenedorDerecho {
-        margin-left: 100px;
-    }
-    /*contenedorMedio*/
-    .contenedorMedio input{
-        display: none;
-    }
-    .contenedorMedio button{
-        display: none;
-    }
-    /*conetendor izquierdo*/
-    .contenedorIzquierdo{
-        margin-right: 550px
-    }
-    .contenedorIzquierdo p{
-        display: none;
-    }
-    .contenedorIzquierdo strong{
-        display: none;
-    }
-    .contenedorDown ul{
-        margin-right: 500px;
-    }
-    /*cartas*/
-    .container{
-        display: flex;
-        flex-direction: column;
-    }
-    .banner-informativo{
-        width: 100%;
-    }
-    /*Footer*/
-
-
-}
-@media screen and (max-width: 664px) {
-    .contenedorMedio{
-        display: none;
-    }
-}
-@media screen and (max-width: 1400px) {
-    .informacion-usuario-box{
-        width: 1000px;
-    }
-}
-@media screen and (max-width: 1200px) {
-    .informacion-usuario-box{
-        width: 900px;
-    }
-}
-@media screen and (max-width: 1000px) {
-    .informacion-usuario-box{
-        width: 700px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .informacion-usuario-box{
-        grid-template-columns: repeat(2, 1fr);
-        text-align: center;
-    }
-    .informacion-usuario-box .parrafo-info{
-        text-align: center;
-    }
-    .informacion-usuario-box{
-        margin-left: 130px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .left{
-        display: none;
-    }
 }

@@ -1,3 +1,23 @@
+/* ==========================================================================
+   MercadoVerde - Capa responsive
+   Se carga despues de las hojas de estilo de cada pagina, por lo que aqui se
+   resuelven los anchos fijos del maquetado base para los distintos
+   tamanos de dispositivo.
+
+   Escalera de breakpoints:
+     1400px  escritorio pequeno
+     1200px  laptop
+     1024px  tablet horizontal
+      992px  tablet
+      768px  tablet vertical / movil grande
+      576px  movil
+      380px  movil pequeno
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Base fluida (todos los tamanos)
+   -------------------------------------------------------------------------- */
+
 html,
 body {
     max-width: 100%;
@@ -6,8 +26,15 @@ body {
 
 img,
 video,
-iframe {
+iframe,
+canvas,
+svg {
     max-width: 100%;
+}
+
+img,
+video,
+iframe {
     height: auto;
 }
 
@@ -17,6 +44,297 @@ iframe {
     max-width: 100%;
 }
 
+/* Evita que los textos largos rompan la caja en pantallas angostas */
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+a,
+li {
+    overflow-wrap: break-word;
+}
+
+/* Los formularios heredan el ancho del contenedor */
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   2. Componentes compartidos: anchos fijos que se vuelven fluidos
+   -------------------------------------------------------------------------- */
+
+/* Cartas del hero */
+.carta-uno {
+    width: 100%;
+}
+
+.carta-dos,
+.carta-tres {
+    width: 100%;
+    max-width: 423px;
+}
+
+.carta-dos h2,
+.carta-tres h2 {
+    width: 100%;
+    max-width: 343px;
+}
+
+.card-info {
+    width: 33.3333%;
+    min-width: 0;
+}
+
+.card-info .col-4 {
+    width: 100%;
+}
+
+.informacion h2 {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* Barra de beneficios */
+.informacion-usuario {
+    padding: 0 12px;
+}
+
+.informacion-usuario-box {
+    width: 100%;
+    max-width: 1300px;
+}
+
+/* Banner informativo */
+.texto h2 {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Suscripcion */
+.datosSuscripcion {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    padding: 0 12px;
+}
+
+.boletin-derecho {
+    width: 100%;
+    max-width: 448px;
+    margin: 20px 0;
+}
+
+.boletin-derecho p {
+    width: 100%;
+}
+
+.form-suscripcion {
+    position: relative;
+    width: 100%;
+    max-width: 538px;
+}
+
+.form-suscripcion input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 16px;
+}
+
+.form-suscripcion button {
+    position: static;
+    flex: 0 0 auto;
+    margin-left: 8px;
+}
+
+.social-icons {
+    width: auto;
+    min-width: 150px;
+}
+
+/* La franja de suscripcion crece cuando su contenido envuelve
+   (en tablet no cabe en los 200px fijos y se montaba sobre el footer) */
+.sesion-suscripcion {
+    height: auto;
+    min-height: 200px;
+}
+
+/* Tablas de carrito, lista de deseos e historial:
+   la carta contenedora hace de area desplazable */
+.tabla .card {
+    overflow-x: auto;
+}
+
+.tabla table {
+    min-width: 520px;
+}
+
+/* El resumen de pago del carrito (.col-md-4.tabla) es una tabla angosta de
+   dos columnas: no necesita ancho minimo y debe caber en su carta */
+.col-md-4.tabla table {
+    min-width: 0;
+    width: 100%;
+}
+
+/* Cupon del carrito: la carta crece con el contenido al envolverse */
+.cartaCupon {
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.tablaCupon {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.tablaCupon input {
+    width: 100%;
+    max-width: 350px;
+}
+
+.botonCupon {
+    position: static;
+    right: auto;
+}
+
+/* Formularios de login / registro */
+.card-box img {
+    width: 100%;
+}
+
+/* Contacto: los datos de contacto no deben desbordar su columna */
+.boxIcons p {
+    overflow-wrap: anywhere;
+}
+
+/* Nosotros: bloque de proposito */
+.proposito {
+    margin: clamp(32px, 10vw, 150px);
+}
+
+.proposito img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+/* Chat flotante */
+.container-box,
+.identificador-usuario {
+    width: min(300px, calc(100vw - 24px));
+}
+
+/* Carrito lateral: el fondo se ancla al viewport y no al contenedor con padding */
+.sombra {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1040;
+}
+
+.pasarelaComprasOculto {
+    max-width: 100%;
+    z-index: 1050;
+}
+
+.comprasCheckOut {
+    display: flex;
+    flex-direction: column;
+}
+
+.productosSeleccionados {
+    width: 100%;
+}
+
+.productoInformacion {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   3. >= 1401px : escritorio grande (maquetado original)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1400px) {
+    .contenedor,
+    .contenedorDescuento {
+        margin: 70px 40px;
+    }
+
+    .informacionTexto {
+        margin: 60px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. <= 1200px : laptop
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+    .cartas-principales {
+        margin-top: 12rem;
+    }
+
+    .informacion {
+        margin-top: 90px;
+        margin-left: 30px;
+    }
+
+    .informacion h2 {
+        font-size: clamp(2rem, 3.6vw, 3.125rem);
+    }
+
+    .contenedorEnvio h2,
+    .contenedorEnvio p {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .sectionEnvio {
+        margin-left: 20px;
+    }
+
+    .formularioDerecho p {
+        width: 100%;
+        max-width: 486px;
+    }
+
+    /* Nosotros: los iconos dejan la posicion absoluta y se apilan bajo el
+       texto en la segunda columna del bloque superpuesto; la foto ocupa
+       las dos filas para que todo quede dentro de la imagen de fondo */
+    .informacionValor {
+        width: 100%;
+        align-content: start;
+    }
+
+    .informacionValor > img {
+        grid-row: 1 / 3;
+    }
+
+    .informacionTexto {
+        margin: 40px 24px 0;
+    }
+
+    .iconosInfo {
+        position: static;
+        left: auto;
+        margin: 8px 24px 0;
+        grid-column: 2;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. <= 1024px : tablet horizontal
+   Aqui el nav fijo pasa a flujo normal y las barras se apilan.
+   -------------------------------------------------------------------------- */
+
 @media (max-width: 1024px) {
     nav.navbar-light,
     nav .navbar-light,
@@ -25,8 +343,9 @@ iframe {
         position: static !important;
     }
 
+    /* Barra superior */
     .banner {
-        height: auto !important;
+        height: auto;
         padding: 8px 12px;
         gap: 8px;
         flex-wrap: wrap;
@@ -34,18 +353,28 @@ iframe {
     }
 
     .banner-right {
-        display: none !important;
+        display: none;
     }
 
     .banner-left {
-        margin-top: 0 !important;
-        align-items: center !important;
+        margin-top: 0;
+        align-items: center;
         justify-content: center;
         width: 100%;
         flex-wrap: wrap;
         gap: 8px;
     }
 
+    .banner-left select {
+        top: 0;
+        margin-right: 0;
+    }
+
+    .banner-left a {
+        margin-top: 0;
+    }
+
+    /* Barra principal: logo, buscador y carrito */
     .bannerPrincipal {
         flex-wrap: wrap;
         gap: 10px;
@@ -55,7 +384,7 @@ iframe {
     .contenedorDerecho,
     .contenedorMedio,
     .contenedorIzquierdo {
-        margin: 0 !important;
+        margin: 0;
     }
 
     .contenedorDerecho {
@@ -65,23 +394,52 @@ iframe {
     }
 
     .contenedorDerecho h1 {
-        font-size: clamp(1.4rem, 4vw, 2rem);
+        font-size: clamp(1.4rem, 4vw, 1.875rem);
     }
 
+    /* El buscador ocupa el ancho disponible sin empujar al boton fuera */
     .contenedorMedio {
         width: 100%;
-        display: flex !important;
+        display: flex;
+        align-items: center;
         justify-content: center;
+        gap: 8px;
+        padding: 0 12px;
     }
 
     #caja {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
         width: min(100%, 560px);
+    }
+
+    #caja .suggestions {
+        flex: 1 0 100%;
     }
 
     .contenedorMedio input,
     #search {
-        width: 100% !important;
-        max-width: none !important;
+        flex: 1 1 auto;
+        width: auto;
+        min-width: 0;
+        max-width: none;
+        margin: 0;
+    }
+
+    .contenedorMedio .botonBuscar,
+    #caja > a {
+        flex: 0 0 auto;
+    }
+
+    /* En el inicio el boton va escrito antes del campo: aqui pasa detras */
+    #caja > a {
+        order: 2;
+    }
+
+    #caja .suggestions {
+        order: 3;
     }
 
     .contenedorIzquierdo {
@@ -89,8 +447,9 @@ iframe {
         width: 100%;
     }
 
+    /* Barra de navegacion negra */
     .contenedorDown {
-        height: auto !important;
+        height: auto;
         padding: 10px 12px;
         flex-direction: column;
         align-items: center;
@@ -99,18 +458,19 @@ iframe {
 
     .contenedorDown ul {
         width: 100%;
-        margin: 0 !important;
+        margin: 0;
         padding: 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px 14px;
+        align-items: center;
+        gap: 4px 14px;
     }
 
     .contenedorDown li,
     .contenedorDown select,
     .contenedorDown a {
-        margin: 0 !important;
+        margin: 0;
     }
 
     .left {
@@ -118,38 +478,239 @@ iframe {
         justify-content: center;
         align-items: center;
         width: 100%;
+        margin: 0;
     }
 
+    .left p,
+    .left img {
+        margin: 0 6px;
+    }
+
+    /* Panel lateral del carrito */
     .pasarelaComprasOculto {
-        width: min(100vw, 400px) !important;
+        width: min(100%, 400px);
+        height: 100dvh;
+        overflow-y: auto;
     }
 
     .comprasCheckOut {
-        margin: 20px !important;
-        height: auto !important;
+        margin: 20px;
+        height: auto;
     }
 
     .botonFinalizar {
-        width: 100% !important;
+        width: 100%;
+        height: auto;
     }
 
     .botonFinalizar button {
-        position: static !important;
+        position: static;
         width: 100%;
         max-width: 260px;
     }
 
     .infoFinal {
-        position: static !important;
+        position: static;
         margin: 16px 0;
+    }
+
+    .productoInformacion img {
+        position: static;
+        margin-left: auto;
+    }
+
+    /* Hero */
+    .container {
+        height: auto;
+    }
+
+    .cartas-principales {
+        margin-top: 2rem;
+        margin-right: 0;
+    }
+
+    .carta-uno {
+        height: auto;
+        min-height: 420px;
+    }
+
+    .informacion {
+        margin: 60px 24px;
+    }
+
+    .carta-column1 {
+        position: static;
+        top: auto;
+    }
+
+    /* Nosotros: el bloque de calidad sale de la superposicion porque su
+       columna de texto ya es mas alta que la foto de fondo; el fondo pasa
+       a ser un background CSS y la foto lateral ocupa todo el alto */
+    .contenedor-section {
+        background: url("../img/FONDO FOTO 2.png") center / cover no-repeat;
+    }
+
+    .contenedor-section > img {
+        display: none;
+    }
+
+    .informacionValor {
+        position: static;
+    }
+
+    .informacionValor > img {
+        height: 100%;
+        min-height: 420px;
+    }
+
+    .informacionTexto {
+        margin: 40px;
+    }
+
+    .informacionTexto p {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .sectionEnvio {
+        margin-left: 0;
+        padding: 0 16px;
+    }
+
+    .sectionEnvio button {
+        margin-left: 0;
+    }
+
+    .containerFounders p {
+        width: 100%;
+        max-width: 550px;
+    }
+
+    /* Politicas y terminos: el nav ya no es fijo, asi que sobra el margen
+       superior; el buscador y su boton comparten una sola fila */
+    .policies {
+        margin-top: 24px;
+    }
+
+    .policies .row > .col-md-11 {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+    }
+
+    .policies .row > .col-md-1 {
+        flex: 0 0 auto;
+        width: auto;
+    }
+
+    .policies .row > .col-md-11 .container,
+    .policies .row > .col-md-1 .container {
+        padding: 0;
+    }
+
+    .policies input {
+        margin-bottom: 0;
+    }
+
+    .policies #searchButton {
+        white-space: nowrap;
+    }
+
+    .policies > .row > h2 {
+        width: 100%;
+        margin-top: 16px;
     }
 }
 
-@media (max-width: 768px) {
-    .container {
-        height: auto !important;
+/* --------------------------------------------------------------------------
+   6. <= 992px : tablet
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+    .footer-columnas {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 
+    .informacion-usuario {
+        height: auto;
+        padding: 24px 12px;
+    }
+
+    .informacion-usuario-box {
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .info-usuario-uno,
+    .info-usuario-dos,
+    .info-usuario-tres,
+    .info-usuario-cuatro {
+        margin-right: 0;
+    }
+
+    /* Nosotros: el bloque superpuesto pasa a flujo normal */
+    .contenedor-section img {
+        height: auto;
+        max-height: 420px;
+    }
+
+    .informacionValor {
+        position: static;
+        grid-template-columns: 1fr;
+    }
+
+    .iconosInfo {
+        position: static;
+        left: auto;
+        grid-column: auto;
+        margin: 0;
+        padding: 0 16px 24px;
+    }
+
+    /* Productos: tres columnas en tablet */
+    .contenedorDescuento .row > .col-md-3 {
+        width: 33.3333%;
+    }
+
+    .informacionTexto {
+        margin: 24px 16px;
+    }
+
+    .sectionEnvio {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 30px;
+    }
+
+    .contenedorEnvio h2 {
+        font-size: clamp(1.8rem, 5vw, 3.125rem);
+    }
+
+    /* Contacto */
+    .contenedorIconos,
+    .contenedorFormulario {
+        margin-bottom: 16px;
+    }
+
+    /* Verificacion de compra */
+    .formulario,
+    .formulario2 {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. <= 768px : tablet vertical y movil grande
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Hero en una sola columna.
+       Las utilidades de Bootstrap (.flex-row) usan !important, por lo que la
+       direccion del flex debe declararse igual para poder sobreescribirla. */
     .container.d-flex.flex-row,
     .container-fluid.d-flex.flex-row,
     .container-fluid.bg-light.d-flex.flex-row {
@@ -163,95 +724,110 @@ iframe {
     .col-8,
     .col-4,
     .carta-column1 {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: 100%;
+        max-width: 100%;
     }
 
-    .carta-column1 {
-        position: static !important;
-        top: auto !important;
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .cartas-principales {
-        margin-top: 1rem !important;
-        margin-right: 0 !important;
+    .carta-dos,
+    .carta-tres {
+        max-width: 100%;
     }
 
     .carta-uno {
-        height: auto !important;
         min-height: 360px;
     }
 
     .informacion {
-        margin: 40px 20px !important;
+        margin: 40px 20px;
     }
 
     .informacion h2 {
-        width: auto !important;
-        height: auto !important;
         font-size: clamp(1.6rem, 6vw, 2.2rem);
+        height: auto;
     }
 
-    .informacion-usuario {
-        height: auto !important;
-        padding: 0 12px;
+    .informacion p {
+        width: 100%;
+        max-width: 320px;
     }
 
-    .informacion-usuario-box {
-        width: 100% !important;
-        grid-template-columns: 1fr !important;
-        height: auto !important;
-        padding: 16px;
-        margin: 0 !important;
-    }
-
+    /* Secciones de producto */
     .contenedor,
     .contenedorDescuento {
-        margin: 24px 12px !important;
+        margin: 24px 12px;
     }
 
     .container-productos {
-        flex-direction: column !important;
+        flex-direction: column;
         gap: 8px;
     }
 
+    /* Productos: dos columnas en tablet vertical y movil.
+       La imagen trae su alto en linea, por eso el !important. */
+    .contenedorDescuento .row > .col-md-3 {
+        width: 50%;
+    }
+
+    .contenedorDescuento .card-body {
+        padding: 12px;
+    }
+
+    .contenedorDescuento .card-body h4 {
+        font-size: 1.05rem;
+    }
+
+    .imagenDescuento {
+        width: 100% !important;
+        height: 170px !important;
+    }
+
+    /* Banner informativo: el texto sale de la superposicion */
     .banner-informativo img {
-        height: auto !important;
+        height: auto;
         min-height: 300px;
     }
 
     .texto {
-        position: static !important;
-        transform: none !important;
-        width: 100% !important;
+        position: static;
+        transform: none;
+        width: 100%;
+        height: auto;
         padding: 16px;
     }
 
     .texto h2 {
-        width: auto !important;
-        margin-left: 0 !important;
+        margin-left: 0;
     }
 
     .texto button {
-        margin-left: 0 !important;
+        margin-left: 0;
+        align-self: center;
+        height: 40px;
     }
 
     .contenedor-box-contadores {
-        position: static !important;
-        transform: none !important;
-        margin: 0 !important;
+        position: static;
+        transform: none;
+        margin: 0;
         flex-wrap: wrap;
         justify-content: center;
         padding-bottom: 16px;
     }
 
+    /* Suscripcion */
     .sesion-suscripcion {
-        height: auto !important;
+        height: auto;
         padding: 16px 12px;
     }
 
     .datosSuscripcion {
-        flex-direction: column !important;
+        flex-direction: column;
         gap: 16px;
     }
 
@@ -259,25 +835,247 @@ iframe {
     .boletin-derecho p,
     .form-suscripcion,
     .form-suscripcion input {
-        width: 100% !important;
-        margin: 0 !important;
-    }
-
-    .form-suscripcion {
-        position: relative;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 
     .form-suscripcion button {
-        position: static !important;
-        width: 100%;
-        margin-top: 10px;
+        margin-left: 8px;
     }
 
+    /* Footer */
     .footer-columnas {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: start;
+        gap: 20px;
+        margin: 20px 16px;
     }
 
     .footer-derecho {
         flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .columna-uno,
+    .columna-dos,
+    .columna-tres,
+    .columna-cuatro {
+        margin-top: 10px;
+    }
+
+    .columna-uno h3,
+    .columna-dos h3,
+    .columna-tres h3,
+    .columna-cuatro h3 {
+        margin-left: 0;
+    }
+
+    /* Formularios de login y registro */
+    .card-box {
+        display: none;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .form-control {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .form-check {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Contacto */
+    .formularioDerecho p {
+        width: 100%;
+    }
+
+    .contenedorFormulario input,
+    .contenedorFormulario textarea {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .contenedorFormulario button {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    #ubicacion {
+        height: 300px;
+    }
+
+    .proposito {
+        grid-template-columns: 1fr;
+    }
+
+    .textoProposito h2 {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    .cardsFounders {
+        width: 100%;
+        max-width: 312px;
+        height: auto;
+        margin-bottom: 16px;
+    }
+
+    .contentBox h5 {
+        margin-top: 24px;
+    }
+
+    .contenedorOption {
+        grid-template-columns: 1fr;
+    }
+
+    /* Panel de control */
+    .cartaPerfil img {
+        width: 120px;
+        height: 120px;
+    }
+
+
+}
+
+/* --------------------------------------------------------------------------
+   8. <= 576px : movil
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 576px) {
+    .banner-left {
+        font-size: 14px;
+    }
+
+    .contenedorDown ul {
+        gap: 4px 10px;
+        font-size: 14px;
+    }
+
+    .informacion-usuario-box {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .icono-info {
+        justify-content: flex-start;
+    }
+
+    .contenedor,
+    .contenedorDescuento {
+        margin: 20px 8px;
+    }
+
+    /* La carta lateral del carrito ocupa todo el ancho */
+    .pasarelaComprasOculto {
+        width: 100%;
+    }
+
+    .comprasCheckOut {
+        margin: 16px 12px;
+    }
+
+    /* Cupon del carrito */
+    .tablaCupon {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .tablaCupon input,
+    .tablaCupon button {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Footer en una columna */
+    .footer-columnas {
+        grid-template-columns: 1fr;
+    }
+
+    /* Nosotros */
+    .informacionTexto h2 {
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+    }
+
+    .iconosInfo {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contadores del banner: los cuatro caben en una sola fila */
+    .contenedor-box-contadores {
+        gap: 4px;
+    }
+
+    .texto-contenedor {
+        width: 68px;
+        height: 68px;
+    }
+
+    .texto-contenedor span {
+        font-size: 22px;
+        margin-left: 0;
+        margin-top: .5rem;
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .texto-contenedor p {
+        font-size: 12px;
+        margin-bottom: .5rem;
+    }
+
+    /* Chat */
+    .inputText textarea {
+        width: 100%;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   9. <= 380px : movil pequeno
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 380px) {
+    .bannerPrincipal h1,
+    .contenedorDerecho h1 {
+        font-size: 1.25rem;
+    }
+
+    .contenedorDerecho .logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .banner-left,
+    .contenedorDown ul {
+        font-size: 13px;
+    }
+
+    .informacion {
+        margin: 24px 12px;
+    }
+
+    .informacion .comprar {
+        width: 100%;
+        max-width: 160px;
+    }
+
+    .texto-contenedor {
+        width: 62px;
+        height: 62px;
+    }
+
+    .tabla table {
+        min-width: 460px;
+    }
+
+    .imagenDescuento {
+        height: 140px !important;
     }
 }

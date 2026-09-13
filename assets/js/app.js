@@ -1,23 +1,20 @@
+// Evento sobre el popup de suscripcion.
+window.addEventListener("DOMContentLoaded", function () {
+    const boton = document.getElementById('close');
+    const popupContainer = document.getElementById('popup');
+    const opacidad = document.getElementById('fondo-opaco');
 
-//Evento sobre un popup
-window.addEventListener("DOMContentLoaded", function (){
+    // Este archivo tambien se carga en paginas sin popup.
+    if (!boton || !popupContainer || !opacidad) return;
+
+    boton.addEventListener("click", function () {
+        popupContainer.classList.remove('contenedor-popup');
+        opacidad.style.display = "none";
+    });
+
     setTimeout(function () {
-        console.log('hay un evento');
-        
-        const boton = document.getElementById('close');
-        const popupContainer = document.getElementById('popup');
-        const opacidad = document.querySelector('#fondo-opaco');
-
-
-        if(popupContainer){
-            popupContainer.classList.replace('popup', 'contenedor-popup');
-            opacidad.style.display = "block";
-        }
-        boton.addEventListener("click", function(){
-            popupContainer.classList.replace('contenedor-popup', 'popup');
-            opacidad.style.display = "none";
-            
-        })
+        popupContainer.classList.add('contenedor-popup');
+        opacidad.style.display = "block";
     }, 5000);
 });
 

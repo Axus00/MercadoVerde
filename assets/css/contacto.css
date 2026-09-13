@@ -68,7 +68,7 @@ h1 {
 }
 .productosSeleccionados{
     display: flex;
-    width: 120vw;
+    width: 100%;
     height: 100px;
     object-fit: cover;
 }
@@ -96,7 +96,7 @@ h1 {
     left: 280px;
 }
 .botonFinalizar{
-    width: 100vw;
+    width: 100%;
     height: 100%;
 }
 .botonFinalizar button{
@@ -394,7 +394,7 @@ img{
     margin-top: 0;
 }
 iframe {
-    width: 100vw;
+    width: 100%;
 }
 /*Sesion suscripcion*/
 .datosSuscripcion{
@@ -554,50 +554,4 @@ p {
 hr {
     margin: 20px 10%;
     border-bottom: 1px solid #ccc;
-}
-
-@media screen and (max-width: 700px) {
-    .banner-right{
-        display: none;
-    }
-    .contenedorMedio input{
-        width: 150px;
-    }
-}
-@media screen and (max-width: 664px) {
-    .contenedorMedio{
-        display: none;
-    }
-}
-@media screen and (max-width: 1400px) {
-    .informacion-usuario-box{
-        width: 1000px;
-    }
-}
-@media screen and (max-width: 1200px) {
-    .informacion-usuario-box{
-        width: 900px;
-    }
-}
-@media screen and (max-width: 1000px) {
-    .informacion-usuario-box{
-        width: 700px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .informacion-usuario-box{
-        grid-template-columns: repeat(2, 1fr);
-        text-align: center;
-    }
-    .informacion-usuario-box .parrafo-info{
-        text-align: center;
-    }
-    .informacion-usuario-box{
-        margin-left: 130px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .left{
-        margin-right: 80px;
-    }
 }

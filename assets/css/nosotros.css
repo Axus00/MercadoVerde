@@ -63,7 +63,7 @@ html {
 }
 .productosSeleccionados{
     display: flex;
-    width: 120vw;
+    width: 100%;
     height: 100px;
     object-fit: cover;
 }
@@ -91,7 +91,7 @@ html {
     left: 280px;
 }
 .botonFinalizar{
-    width: 100vw;
+    width: 100%;
     height: 100%;
 }
 .botonFinalizar button{
@@ -433,7 +433,7 @@ input::placeholder {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-top: 50px;
-    margin-left: 50px;
+    padding-left: 50px;
 }
 .sectionEnvio button{
     background-color: var(--clr-button);
@@ -707,50 +707,4 @@ p {
 hr {
     margin: 0 5%;
     border-bottom: 1px solid #ccc;
-}
-
-@media screen and (max-width: 700px) {
-    .banner-right{
-        display: none;
-    }
-    .contenedorMedio input{
-        width: 150px;
-    }
-}
-@media screen and (max-width: 664px) {
-    .contenedorMedio{
-        display: none;
-    }
-}
-@media screen and (max-width: 1400px) {
-    .informacion-usuario-box{
-        width: 1000px;
-    }
-}
-@media screen and (max-width: 1200px) {
-    .informacion-usuario-box{
-        width: 900px;
-    }
-}
-@media screen and (max-width: 1000px) {
-    .informacion-usuario-box{
-        width: 700px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .informacion-usuario-box{
-        grid-template-columns: repeat(2, 1fr);
-        text-align: center;
-    }
-    .informacion-usuario-box .parrafo-info{
-        text-align: center;
-    }
-    .informacion-usuario-box{
-        margin-left: 130px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .left{
-        margin-right: 80px;
-    }
 }
